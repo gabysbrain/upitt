@@ -1,0 +1,173 @@
+In IN    (PP*)    (S*    IN     (S1(S(PP*            *    -   -                       *               *               *        (AM-LOC*      
+an DT    (NP*       *    DT       (NP(NP*            *    -   -                       *               *               *               *      
+Oct. NNP      *       *    NNP            *            *    -   -                       *               *               *               *      
+19 CD       *       *    CD             *            *    -   -                       *               *               *               *      
+review NN       *)      *    NN             *)           *    -   -                       *               *               *               *      
+of IN    (PP*)      *    IN          (PP*            *    -   -                       *               *               *               *      
+`` ``       *       *    ''             *            *    -   -                       *               *               *               *      
+The DT    (NP*       *    DT       (NP(NP*            *    -   -                       *               *               *               *      
+Misanthrope NN       *)      *    NN             *)           *    -   -                       *               *               *               *      
+'' ''       *       *    ''             *            *    -   -                       *               *               *               *      
+at IN    (PP*)      *    IN          (PP*            *    -   -                       *               *               *               *      
+Chicago NNP   (NP*)      *    NNP      (NP(NP*        (LOC*)   -   -                       *               *               *               *      
+'s POS   (NP*       *    POS            *)           *    -   -                       *               *               *               *      
+Goodman NNP      *       *    NNP            *       (MISC*)   -   -                       *               *               *               *      
+Theatre NNP      *)      *    NNP            *))))        *    -   -                       *               *               *               *      
+( (        *       *    (          (PRN*            *    -   -                       *               *               *               *      
+`` ``       *       *    ''             *            *    -   -                       *               *               *               *      
+Revitalized VBN   (NP*     (S*    VBN       (S(NP*            *    01  revitalize            (V*)           (A0*               *               *      
+Classics NNS      *)      *    NNS            *)           *    -   -                    (A1*)              *)              *               *      
+Take VBP   (VP*)      *    VBP         (VP*            *    01  take                    *             (V*)              *               *      
+the DT    (NP*       *    DT          (NP*            *    -   -                       *            (A1*               *               *      
+Stage NNP      *)      *    NN             *)           *    -   -                       *               *)              *               *      
+in IN    (PP*)      *    IN          (PP*            *    -   -                       *        (AM-LOC*               *               *      
+Windy NNP   (NP*       *    NNP         (NP*       (MISC*)   -   -                       *               *               *               *      
+City NNP      *)      *S)  NNP            *))))        *    -   -                       *               *)              *               *      
+, ,        *       *    ,              *            *    -   -                       *               *               *               *      
+'' ''       *       *    ''             *            *    -   -                       *               *               *               *      
+Leisure NNP   (NP*       *    NNP         (NP*        (ORG*    -   -                       *               *               *               *      
+& CC       *       *    CC             *            *    -   -                       *               *               *               *      
+Arts NNP      *)      *    NNPS           *)           *)   -   -                       *               *               *               *      
+) )        *       *    )              *)))         *    -   -                       *               *               *               *)     
+, ,        *       *    ,              *            *    -   -                       *               *               *               *      
+the DT    (NP*       *    DT       (NP(NP*            *    -   -                       *               *            (A1*            (A1*      
+role NN       *)      *    NN             *)           *    -   -                       *               *               *               *      
+of IN    (PP*)      *    IN          (PP*            *    -   -                       *               *               *               *      
+Celimene NNP   (NP*)      *    NNP         (NP*))      (LOC*)   -   -                       *               *               *)              *      
+, ,        *       *    ,              *            *    -   -                       *               *               *               *      
+played VBN   (VP*)      *    VBN         (VP*            *    02  play                    *               *             (V*)              *      
+by IN    (PP*)      *    IN          (PP*            *    -   -                       *               *            (A0*               *      
+Kim NNP   (NP*       *    NNP         (NP*            *    -   -                       *               *               *               *      
+Cattrall NNP      *)      *    NNP            *)))         *    -   -                       *               *               *)              *      
+, ,        *       *    ,              *)           *    -   -                       *               *               *               *)     
+was VBD   (VP*       *    AUX         (VP*            *    -   -                       *               *               *               *      
+mistakenly RB       *       *    RB     (VP(ADVP*)           *    -   -                       *               *               *        (AM-MNR*)     
+attributed VBN      *)      *    VBN            *            *    01  attribute               *               *               *             (V*)     
+to TO    (PP*)      *    TO          (PP*            *    -   -                       *               *               *            (A2*      
+Christina NNP   (NP*       *    NNP         (NP*        (LOC*)   -   -                       *               *               *               *      
+Haag NNP      *)      *    NNP            *))))    (LOC*)   -   -                       *               *               *               *)     
+. .        *       *S)  .              *))          *    -   -                       *               *               *               *      
+     
+Ms. NNP   (NP*     (S*    NNP   (S1(S(NP*         *    -   -                    (A0*      
+Haag NNP      *)      *    NNP           *)    (LOC*)   -   -                       *)     
+plays VBZ   (VP*)      *    VBZ        (VP*         *    02  play                  (V*)     
+Elianti NNP   (NP*)      *    NNP        (NP*))       *    -   -                    (A1*)     
+. .        *       *S)  .             *))       *    -   -                       *      
+     
+Rolls-Royce NNP      (NP*     (S*      NNP      (S1(S(NP*            (ORG*    -   -                    (A0*               *               *      
+Motor NNP         *       *      NNP              *                *    -   -                       *               *               *      
+Cars NNPS        *       *      NNPS             *                *    -   -                       *               *               *      
+Inc. NNP         *)      *      NNP              *)               *)   -   -                       *)              *               *      
+said VBD      (VP*)      *      VBD           (VP*                *    01  say                   (V*)              *               *      
+it PRP      (NP*)    (S*      PRP    (SBAR(S(NP*)               *    -   -                    (A1*            (A0*)              *      
+expects VBZ      (VP*)      *      VBZ           (VP*                *    01  expect                  *             (V*)              *      
+its PRP$     (NP*     (S*      PRP$        (S(NP*                *    -   -                       *            (A1*            (A1*      
+U.S. NNP         *       *      NNP              *            (LOC*)   -   -                       *               *               *      
+sales NNS         *)      *      NNS              *)               *    -   -                       *               *               *)     
+to TO       (VP*       *      TO            (VP*                *    -   -                       *               *               *      
+remain VB          *)      *      VB            (VP*                *    01  remain                  *               *             (V*)     
+steady JJ     (ADJP*)      *      JJ          (ADJP*)               *    -   -                       *               *            (A3*)     
+at IN       (PP*)      *      IN            (PP*                *    -   -                       *               *        (AM-MNR*      
+about IN       (NP*       *      IN         (NP(QP*                *    -   -                       *               *               *      
+1,200 CD          *       *      CD               *)               *    -   -                       *               *               *      
+cars NNS         *)      *      NNS              *))              *    -   -                       *               *               *)     
+in IN       (PP*)      *      IN            (PP*                *    -   -                       *               *        (AM-TMP*      
+1990 CD       (NP*)      *S)S)  CD            (NP*)))))))))       *    -   -                       *)              *)              *)     
+. .           *       *S)    .                *))              *    -   -                       *               *               *      
+     
+The DT    (NP*     (S*    DT    (S1(S(NP*            *    -   -                    (A0*      
+luxury NN       *       *    NN            *            *    -   -                       *      
+auto NN       *       *    NN            *            *    -   -                       *      
+maker NN       *)      *    NN            *)           *    -   -                       *)     
+last JJ    (NP*       *    JJ         (NP*            *    -   -                (AM-TMP*      
+year NN       *)      *    NN            *)           *    -   -                       *)     
+sold VBD   (VP*)      *    VBD        (VP*            *    01  sell                  (V*)     
+1,214 CD    (NP*       *    CD         (NP*            *    -   -                    (A1*      
+cars NNS      *)      *    NNS           *)           *    -   -                       *)     
+in IN    (PP*)      *    IN         (PP*            *    -   -                (AM-LOC*      
+the DT    (NP*       *    DT         (NP*            *    -   -                       *      
+U.S. NNP      *)      *S)  NNP           *)))))   (LOC*)   -   -                       *)     
+     
+Howard NNP   (NP*     (S*    NNP   (S1(S(NP(NP*            (PER*    -   -                    (A0*               *      
+Mosher NNP      *)      *    NNP              *)               *)   -   -                       *               *      
+, ,        *       *    ,                *                *    -   -                       *               *      
+president NN    (NP*)      *    NN         (NP(NP*)               *    -   -                       *               *      
+and CC       *       *    CC               *                *    -   -                       *               *      
+chief JJ    (NP*       *    JJ            (NP*                *    -   -                       *               *      
+executive NN       *       *    JJ               *                *    -   -                       *               *      
+officer NN       *)      *    NN               *))              *    -   -                       *               *      
+, ,        *       *    ,                *)               *    -   -                       *)              *      
+said VBD   (VP*)      *    VBD           (VP*                *    01  say                   (V*)              *      
+he PRP   (NP*)    (S*    PRP    (SBAR(S(NP*)               *    -   -                    (A1*            (A0*)     
+anticipates VBZ   (VP*)      *    VBZ           (VP*                *    01  anticipate              *             (V*)     
+growth NN    (NP*)      *    NN         (NP(NP*)               *    -   -                       *            (A1*      
+for IN    (PP*)      *    IN            (PP*                *    -   -                       *               *      
+the DT    (NP*       *    DT            (NP*                *    -   -                       *               *      
+luxury NN       *       *    NN               *                *    -   -                       *               *      
+auto NN       *       *    NN               *                *    -   -                       *               *      
+maker NN       *)      *    NN               *))              *    -   -                       *               *      
+in IN    (PP*)      *    IN         (PP(PP*                *    -   -                       *               *      
+Britain NNP   (NP*       *    NNP           (NP*            (LOC*)   -   -                       *               *      
+and CC       *       *    CC               *                *    -   -                       *               *      
+Europe NNP      *)      *    NNP              *))          (LOC*)   -   -                       *               *      
+, ,     (PP*       *    ,                *                *    -   -                       *               *      
+and CC       *)      *    CC               *                *    -   -                       *               *      
+in IN    (PP*)      *    IN            (PP*                *    -   -                       *               *      
+Far NNP   (NP*       *    NNP           (NP*           (MISC*    -   -                       *               *      
+Eastern NNP      *       *    NNP              *                *)   -   -                       *               *      
+markets NNS      *)      *S)  NNS              *))))))))        *    -   -                       *)              *)     
+. .        *       *S)  .                *))              *    -   -                       *               *      
+     
+BELL NNP    (NP*     (S*    NNP    (S1(S(NP*       (ORG*    -   -                    (A0*      
+INDUSTRIES NNP       *       *    NNPS           *           *    -   -                       *      
+Inc. NNP       *)      *    NNP            *)          *)   -   -                       *)     
+increased VBD    (VP*)      *    VBD         (VP*           *    01  increase              (V*)     
+its PRP$   (NP*       *    PRP$        (NP*           *    -   -                    (A1*      
+quarterly NN        *)      *    NN             *)          *    -   -                       *)     
+to TO     (PP*)      *    TO          (PP*           *    -   -                    (A4*      
+10 CD     (NP*       *    CD          (NP*           *    -   -                       *      
+cents NNS       *)      *    NNS            *))         *    -   -                       *)     
+from IN     (PP*)      *    IN          (PP*           *    -   -                    (A3*      
+seven CD     (NP*       *    CD       (NP(NP*           *    -   -                       *      
+cents NNS       *)      *    NNS            *)          *    -   -                       *      
+a DT     (NP*       *    DT          (NP*           *    -   -                       *      
+share NN        *)      *    NN             *))))       *    -   -                       *)     
+. .         *       *S)  .              *))         *    -   -                       *      
+     
+They PRP    (NP*)    (S*        PRP      (S1(S(NP*)                  *    -   -                    (A0*)              *               *               *      
+make VBP    (VP*)      *        VBP           (VP*                   *    01  make                  (V*)              *               *               *      
+the DT     (NP*       *        DT            (NP*                   *    -   -                    (A1*               *               *               *      
+argument NN        *)      *        NN               *)                  *    -   -                       *)              *               *               *      
+in IN     (PP*)      *        IN            (PP*                   *    -   -                (AM-LOC*               *               *               *      
+letters NNS    (NP*)      *        NNS        (NP(NP*)                  *    -   -                       *               *               *               *      
+to TO     (PP*)      *        TO            (PP*                   *    -   -                       *               *               *               *      
+the DT     (NP*       *        DT            (NP*                   *    -   -                       *               *               *               *      
+agency NN        *)      *        NN               *))                 *    -   -                       *               *               *               *      
+about IN     (PP*)      *        IN            (PP*                   *    -   -                       *               *               *               *      
+rule NN     (NP*       *        NN         (NP(NP*                   *    -   -                       *            (A1*            (A0*               *      
+changes NNS       *)      *        NNS              *)                  *    -   -                       *               *)              *)              *      
+proposed VBD    (VP*)      *        VBD           (VP*                   *    01  propose                 *             (V*)              *               *      
+this DT     (NP*       *        DT            (NP*                   *    -   -                       *        (AM-TMP*               *               *      
+past JJ        *       *        JJ               *                   *    -   -                       *               *               *               *      
+summer NN        *)      *        NN               *))                 *    -   -                       *               *)              *               *      
+that IN     (NP*)    (S*        WDT    (SBAR(WHNP*)                  *    -   -                       *               *          (R-A0*)              *      
+, ,         *       *        ,              (S*                   *    -   -                       *               *               *               *      
+among IN     (PP*)    (S*        IN            (PP*                   *    -   -                       *               *        (AM-LOC*               *      
+other JJ     (NP*       *        JJ            (NP*                   *    -   -                       *               *               *               *      
+things NNS       *)      *        NNS              *))                 *    -   -                       *               *               *)              *      
+, ,         *       *        ,                *                   *    -   -                       *               *               *               *      
+would MD     (VP*       *        MD            (VP*                   *    -   -                       *               *        (AM-MOD*)              *      
+exempt VB        *)      *        VB            (VP*                   *    01  exempt                  *               *             (V*)              *      
+many JJ     (NP*       *        JJ            (NP*                   *    -   -                       *               *            (A1*            (A0*      
+middle-management JJ        *       *        JJ               *                   *    -   -                       *               *               *               *      
+executives NNS       *)      *        NNS              *)                  *    -   -                       *               *               *)              *)     
+from IN     (PP*)      *        IN            (PP*                   *    -   -                       *               *            (A2*               *      
+reporting VBG    (VP*)    (S*        VBG         (S(VP*                   *    01  report                  *               *               *             (V*)     
+trades NNS    (NP*)      *        NNS        (NP(NP*)                  *    -   -                       *               *               *            (A1*      
+in IN     (PP*)      *        IN            (PP*                   *    -   -                       *               *               *               *      
+their PRP$   (NP*       *        PRP$       (NP(NP*                   *    -   -                       *               *               *               *      
+own JJ        *       *        JJ               *                   *    -   -                       *               *               *               *      
+companies NNS       *)      *        NNS              *                   *    -   -                       *               *               *               *      
+' POS    (NP*       *        POS              *)                  *    -   -                       *               *               *               *      
+shares NNS       *)      *S)S)S)  NNS              *)))))))))))))))    *    -   -                       *)              *               *)              *)     
+. .         *       *S)      .                *))                 *    -   -                       *               *               *               *      

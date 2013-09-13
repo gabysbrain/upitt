@@ -1,0 +1,72 @@
+=cluster;Human+GA Features;Human-only Features;GA-only Features
+
+xlabel=Class
+ylabel=f-Score
+xlabelshift=0,-3
+
+Overall    55.19
+A0    67.68
+A1    54.19
+A2    36.16
+A3    33.72
+A4    36.36
+AM-ADV    34.97
+AM-CAU    44.44
+AM-DIR    31.58
+AM-DIS    65.83
+AM-EXT    55.32
+AM-LOC    27.96
+AM-MNR    38.03
+AM-MOD    96.99
+AM-NEG    91.43
+AM-PNC    16.54
+AM-TMP    49.96
+R-A0    2.70
+R-A1    2.35
+R-AM-CAU    44.44
+R-AM-MNR    28.57
+=multi
+Overall    51.20
+A0    58.70
+A1    50.65
+A2    36.36
+A3    40.00
+A4    38.00
+AM-ADV    31.79
+AM-CAU    35.62
+AM-DIR    30.77
+AM-DIS    68.42
+AM-EXT    44.00
+AM-LOC    30.81
+AM-MNR    31.53
+AM-MOD    95.37
+AM-NEG    89.42
+AM-PNC    14.39
+AM-TMP    50.05
+R-A0    2.70
+R-A1    4.71
+R-AM-CAU    25.00
+R-AM-MNR    28.57
+=multi
+Overall    51.24
+A0    67.14
+A1    58.75
+A2    26.72
+A3    3.13
+A4    0.00
+AM-ADV    12.79
+AM-CAU    0.00
+AM-DIR    0.00
+AM-DIS    36.53
+AM-EXT    11.76
+AM-LOC    15.53
+AM-MNR    29.98
+AM-MOD    94.48
+AM-NEG    84.47
+AM-PNC    2.35
+AM-TMP    23.71
+R-A0    2.65
+R-A1    0.00
+R-AM-CAU    57.14
+R-AM-MNR    0.00
+

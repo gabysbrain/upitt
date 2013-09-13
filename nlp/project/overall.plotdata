@@ -1,0 +1,31 @@
+=cluster;3-stage Human+GA Features;3-stage Human-only Features;3-stage GA-only Features;1-stage Human+GA Features;1-stage Human-only Features
+
+=norotate
+
+extraops=set label "61.94" at 0.8,65 right 
+extraops=set label "64.00" at 1.3,67 right 
+extraops=set label "49.76" at 1.8,53 right 
+extraops=set label "53.12" at 2.3,56 right 
+extraops=set label "55.19" at 2.8,58 right 
+extraops=set label "58.05" at 3.3,61 right 
+
+Precision 61.94
+Recall    49.76
+F1        55.19
+=multi
+Precision 58.56
+Recall    45.48
+F1        51.20
+=multi
+Precision 55.17
+Recall    47.83
+F1        51.24
+=multi
+Precision 64.00
+Recall    53.12
+F1        58.05
+=multi
+Precision 62.94
+Recall    50.86
+F1        56.26
+

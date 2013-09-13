@@ -1,0 +1,24 @@
+NLP Assignment #1
+
+Files:
+torsneyweir.promise.tag
+torsneyweir.bet.tag
+torsneyweir.wordnet.dat
+torsneyweir.homonyms.dat
+
+Programs to questions:
+Q1: torsneyweir.wordnet.dat
+Q2: torsneyweir.homonyms.dat
+Q3: torsneyweir.promise.tag torsneyweir.bet.tag
+Q4: torsneyweir.wordnet.dat
+Q5: torsneyweir.wordnet.dat
+Q6: torsneyweir.promise.tag torsneyweir.bet.tag
+Q7: torsneyweir.wordnet.dat
+
+Info: 
+torsneyweir.wordnet.dat contains all the summary information from questions 1, 
+4, 5, and 7.  Categories are tab delimited.  Heads refers to the lexical heads
+of the thematic roles for each role and sense.  Most common ancestor is the
+most common ancestor for the heads in word net or a made up one if I couldn't
+find a good match.
+

@@ -1,0 +1,52 @@
+\documentclass[12pt]{article}
+
+\usepackage{fullpage}
+\usepackage{longtable}
+\usepackage[pdftex]{graphicx}
+\DeclareGraphicsExtensions{.pdf,.jpg}
+
+% no numbers, etc
+\pagestyle{empty}
+
+\begin{document}
+
+{\bf Research Methods Homework} \hfill {\raggedleft Thomas Torsney-Weir}
+
+{\em An Integrated Framework for Dependable and Revivable Architectures 
+Using Multicore Processors} introduces the INDRA system which is designed
+to provide a system that is tolerant against remote attacks.  It focuses on
+being able to monitor and recover against attacks.
+
+INDRA uses a multicore architecture to accomplish its goal.  It splits the
+cores into an execution class and a monitor/recovery class.  The monitor cores
+run in an elevated security mode and even  a completely separate OS.  The
+execution cores cannot access the memory space of the monitor class and the
+monitor class cannot run network services thus is not vulnerable to a remote
+attack.  
+
+The monitoring cores watch execution on the other processors for events
+that would signify an attack.  The monitoring cores can watch execution
+in real time since they are located on the same die as the executing cores.
+The monitors also take periodic memory images as checkpoints.  They use a
+delta scheme to speed the checkpointing process.  When a fault is detected
+the monitor can pause execution and restore from a checkpoint.
+
+This paper provides a novel approach to dealing with remote attacks.  I
+really like the fast checkpointing idea and using a second core to monitor
+execution.  However, I'm not entirely sure this system would allow a system
+to recover from a DoS attack.  It seems that one could launch a DoS attack
+on the machine, wait for it to recover and then launch another attack.  
+Depending on the architecture you could even DoS the monitoring core by
+causing so many faults it spends all its time recovering from the attacks.
+
+INDRA would also require a lot of memory to perform the checkpointing.  I
+imagine this system would primarily be used in routers with specialized
+hardware so maybe the memory used by the execution cores would not be that
+large.  Even so, you would need double the memory just to do checkpointing.
+
+Future work could extend INDRA to work on more common hardware.  This system
+requires a special BIOS and it seems to require special registers and I/O
+systems to handle the interactions between the cores.  
+
+\end{document}
+

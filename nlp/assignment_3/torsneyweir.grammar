@@ -1,0 +1,314 @@
+DT[num=pl] -> some
+DT[num=sg] -> a
+DT[num=sg] -> that
+DT[num=sg] -> the
+IN -> at
+IN -> by
+IN -> in
+IN -> on
+IN -> with
+JJ -> fun
+JJ -> funny
+JJ -> nice
+JJ -> quick
+JJ -> smart
+JJS -> JJ
+JJS -> JJS JJ
+NNP[num=sg][gen=f] -> Kalyani
+NNP[num=sg][gen=f] -> Mary
+NNP[num=sg][gen=m] -> Juan
+NNP[num=sg][gen=m] -> Qiu
+NNS[person=3][num=pl] -> books
+NNS[person=3][num=pl] -> boys
+NNS[person=3][num=pl] -> dogs
+NNS[person=3][num=pl] -> games
+NNS[person=3][num=pl] -> houses
+NNS[person=3][num=pl] -> people
+NNS[person=3][num=pl] -> sticks
+NNS[person=3][num=pl] -> stones
+NNS[person=3][num=pl] -> stores
+NN[person=3][num=sg] -> book
+NN[person=3][num=sg] -> boy
+NN[person=3][num=sg] -> dog
+NN[person=3][num=sg] -> game
+NN[person=3][num=sg] -> house
+NN[person=3][num=sg] -> person
+NN[person=3][num=sg] -> stick
+NN[person=3][num=sg] -> stone
+NN[person=3][num=sg] -> store
+NP -> NP[person=3][num=pl][case=accu]
+NP -> NP[person=3][num=pl][case=nom]
+NP -> NP[person=3][num=sg][case=accu]
+NP -> NP[person=3][num=sg][case=nom]
+NP -> NP[person=n3][num=pl][case=accu]
+NP -> NP[person=n3][num=pl][case=nom]
+NP -> NP[person=n3][num=sg][case=accu]
+NP -> NP[person=n3][num=sg][case=nom]
+NP[person=3][num=pl][case=accu] -> DT[num=pl] JJS Nom[person=3][num=pl]
+NP[person=3][num=pl][case=accu] -> DT[num=pl] Nom[person=3][num=pl]
+NP[person=3][num=pl][case=accu] -> PRP[person=3][num=pl][case=accu]
+NP[person=3][num=pl][case=nom] -> DT[num=pl] JJS Nom[person=3][num=pl]
+NP[person=3][num=pl][case=nom] -> DT[num=pl] Nom[person=3][num=pl]
+NP[person=3][num=pl][case=nom] -> PRP[person=3][num=pl][case=nom]
+NP[person=3][num=sg][case=accu] -> DT[num=sg] JJS Nom[person=3][num=sg]
+NP[person=3][num=sg][case=accu] -> DT[num=sg] Nom[person=3][num=sg]
+NP[person=3][num=sg][case=accu] -> NNP[num=sg][gen=f]
+NP[person=3][num=sg][case=accu] -> NNP[num=sg][gen=m]
+NP[person=3][num=sg][case=accu] -> PRP[person=3][num=sg][case=accu]
+NP[person=3][num=sg][case=nom] -> DT[num=sg] JJS Nom[person=3][num=sg]
+NP[person=3][num=sg][case=nom] -> DT[num=sg] Nom[person=3][num=sg]
+NP[person=3][num=sg][case=nom] -> NNP[num=sg][gen=f]
+NP[person=3][num=sg][case=nom] -> NNP[num=sg][gen=m]
+NP[person=3][num=sg][case=nom] -> PRP[person=3][num=sg][case=nom]
+NP[person=n3][num=pl][case=accu] -> PRP[person=n3][num=pl][case=accu]
+NP[person=n3][num=pl][case=nom] -> PRP[person=n3][num=pl][case=nom]
+NP[person=n3][num=sg][case=accu] -> PRP[person=n3][num=sg][case=accu]
+NP[person=n3][num=sg][case=nom] -> PRP[person=n3][num=sg][case=nom]
+Nom[person=3][num=pl] -> NNS[person=3][num=pl]
+Nom[person=3][num=sg] -> NN[person=3][num=sg]
+PP -> IN NP[person=3][num=pl][case=accu]
+PP -> IN NP[person=3][num=sg][case=accu]
+PP -> IN NP[person=n3][num=pl][case=accu]
+PP -> IN NP[person=n3][num=sg][case=accu]
+PP -> TO NP[person=3][num=pl][case=accu]
+PP -> TO NP[person=3][num=sg][case=accu]
+PP -> TO NP[person=n3][num=pl][case=accu]
+PP -> TO NP[person=n3][num=sg][case=accu]
+PRP[person=3][num=pl][case=accu] -> them
+PRP[person=3][num=pl][case=nom] -> they
+PRP[person=3][num=sg][case=accu] -> her
+PRP[person=3][num=sg][case=accu] -> him
+PRP[person=3][num=sg][case=nom] -> he
+PRP[person=3][num=sg][case=nom] -> it
+PRP[person=3][num=sg][case=nom] -> she
+PRP[person=n3][num=pl][case=accu] -> us
+PRP[person=n3][num=pl][case=nom] -> we
+PRP[person=n3][num=sg][case=accu] -> me
+PRP[person=n3][num=sg][case=nom] -> I
+PRP[person=n3][num=sg][case=nom] -> you
+PassVerb[person=3][num=pl][vclass=intent] -> VBD[person=3][num=pl][vclass=tobe] VBD[person=3][num=pl][vclass=intent]
+PassVerb[person=3][num=pl][vclass=prop] -> VBD[person=3][num=pl][vclass=tobe] VBD[person=3][num=pl][vclass=prop]
+PassVerb[person=3][num=pl][vclass=trans] -> VBD[person=3][num=pl][vclass=tobe] VBD[person=3][num=pl][vclass=trans]
+PassVerb[person=3][num=sg][vclass=intent] -> VBD[person=3][num=sg][vclass=tobe] VBD[person=3][num=sg][vclass=intent]
+PassVerb[person=3][num=sg][vclass=prop] -> VBD[person=3][num=sg][vclass=tobe] VBD[person=3][num=sg][vclass=prop]
+PassVerb[person=3][num=sg][vclass=trans] -> VBD[person=3][num=sg][vclass=tobe] VBD[person=3][num=sg][vclass=trans]
+PassVerb[person=n3][num=pl][vclass=intent] -> VBD[person=n3][num=pl][vclass=tobe] VBD[person=n3][num=pl][vclass=intent]
+PassVerb[person=n3][num=pl][vclass=prop] -> VBD[person=n3][num=pl][vclass=tobe] VBD[person=n3][num=pl][vclass=prop]
+PassVerb[person=n3][num=pl][vclass=trans] -> VBD[person=n3][num=pl][vclass=tobe] VBD[person=n3][num=pl][vclass=trans]
+PassVerb[person=n3][num=sg][vclass=intent] -> VBD[person=n3][num=sg][vclass=tobe] VBD[person=n3][num=sg][vclass=intent]
+PassVerb[person=n3][num=sg][vclass=prop] -> VBD[person=n3][num=sg][vclass=tobe] VBD[person=n3][num=sg][vclass=prop]
+PassVerb[person=n3][num=sg][vclass=trans] -> VBD[person=n3][num=sg][vclass=tobe] VBD[person=n3][num=sg][vclass=trans]
+S -> NP[person=3][num=pl][case=nom] VP[person=3][num=pl]
+S -> NP[person=3][num=sg][case=nom] VP[person=3][num=sg]
+S -> NP[person=n3][num=pl][case=nom] VP[person=n3][num=pl]
+S -> NP[person=n3][num=sg][case=nom] VP[person=n3][num=sg]
+S -> VPG
+S -> WDT VP[person=3][num=sg]
+TO -> to
+VBD[person=3][num=pl][vclass=intent] -> persuaded
+VBD[person=3][num=pl][vclass=intrans] -> slept
+VBD[person=3][num=pl][vclass=intrans] -> thought
+VBD[person=3][num=pl][vclass=prop] -> believed
+VBD[person=3][num=pl][vclass=tobe] -> were
+VBD[person=3][num=pl][vclass=trans] -> had
+VBD[person=3][num=pl][vclass=trans] -> played
+VBD[person=3][num=pl][vclass=trans] -> read
+VBD[person=3][num=pl][vclass=trans] -> thrown
+VBD[person=3][num=pl][vclass=trans] -> went
+VBD[person=3][num=sg][vclass=intent] -> persuaded
+VBD[person=3][num=sg][vclass=intrans] -> slept
+VBD[person=3][num=sg][vclass=intrans] -> thought
+VBD[person=3][num=sg][vclass=prop] -> believed
+VBD[person=3][num=sg][vclass=tobe] -> was
+VBD[person=3][num=sg][vclass=trans] -> had
+VBD[person=3][num=sg][vclass=trans] -> played
+VBD[person=3][num=sg][vclass=trans] -> read
+VBD[person=3][num=sg][vclass=trans] -> thrown
+VBD[person=3][num=sg][vclass=trans] -> went
+VBD[person=n3][num=pl][vclass=intent] -> persuaded
+VBD[person=n3][num=pl][vclass=intrans] -> slept
+VBD[person=n3][num=pl][vclass=intrans] -> thought
+VBD[person=n3][num=pl][vclass=prop] -> believed
+VBD[person=n3][num=pl][vclass=tobe] -> were
+VBD[person=n3][num=pl][vclass=trans] -> had
+VBD[person=n3][num=pl][vclass=trans] -> played
+VBD[person=n3][num=pl][vclass=trans] -> read
+VBD[person=n3][num=pl][vclass=trans] -> thrown
+VBD[person=n3][num=pl][vclass=trans] -> went
+VBD[person=n3][num=sg][vclass=intent] -> persuaded
+VBD[person=n3][num=sg][vclass=intrans] -> slept
+VBD[person=n3][num=sg][vclass=intrans] -> thought
+VBD[person=n3][num=sg][vclass=prop] -> believed
+VBD[person=n3][num=sg][vclass=tobe] -> was
+VBD[person=n3][num=sg][vclass=trans] -> had
+VBD[person=n3][num=sg][vclass=trans] -> played
+VBD[person=n3][num=sg][vclass=trans] -> read
+VBD[person=n3][num=sg][vclass=trans] -> thrown
+VBD[person=n3][num=sg][vclass=trans] -> went
+VBG[vclass=intent] -> persuading
+VBG[vclass=intrans] -> sleeping
+VBG[vclass=intrans] -> thinking
+VBG[vclass=prop] -> believing
+VBG[vclass=trans] -> going
+VBG[vclass=trans] -> having
+VBG[vclass=trans] -> playing
+VBG[vclass=trans] -> reading
+VBG[vclass=trans] -> throwing
+VBP[person=3][num=pl][vclass=intent] -> persuade
+VBP[person=3][num=pl][vclass=intrans] -> sleep
+VBP[person=3][num=pl][vclass=intrans] -> think
+VBP[person=3][num=pl][vclass=prop] -> believe
+VBP[person=3][num=pl][vclass=trans] -> go
+VBP[person=3][num=pl][vclass=trans] -> have
+VBP[person=3][num=pl][vclass=trans] -> play
+VBP[person=3][num=pl][vclass=trans] -> read
+VBP[person=3][num=pl][vclass=trans] -> throw
+VBP[person=n3][num=pl][vclass=intent] -> persuade
+VBP[person=n3][num=pl][vclass=intrans] -> sleep
+VBP[person=n3][num=pl][vclass=intrans] -> think
+VBP[person=n3][num=pl][vclass=prop] -> believe
+VBP[person=n3][num=pl][vclass=trans] -> go
+VBP[person=n3][num=pl][vclass=trans] -> have
+VBP[person=n3][num=pl][vclass=trans] -> play
+VBP[person=n3][num=pl][vclass=trans] -> read
+VBP[person=n3][num=pl][vclass=trans] -> throw
+VBP[person=n3][num=sg][vclass=intent] -> persuade
+VBP[person=n3][num=sg][vclass=intrans] -> sleep
+VBP[person=n3][num=sg][vclass=intrans] -> think
+VBP[person=n3][num=sg][vclass=prop] -> believe
+VBP[person=n3][num=sg][vclass=trans] -> go
+VBP[person=n3][num=sg][vclass=trans] -> have
+VBP[person=n3][num=sg][vclass=trans] -> play
+VBP[person=n3][num=sg][vclass=trans] -> read
+VBP[person=n3][num=sg][vclass=trans] -> throw
+VBZ[person=3][num=sg][vclass=intent] -> persuades
+VBZ[person=3][num=sg][vclass=intrans] -> sleeps
+VBZ[person=3][num=sg][vclass=intrans] -> thinks
+VBZ[person=3][num=sg][vclass=prop] -> believes
+VBZ[person=3][num=sg][vclass=trans] -> goes
+VBZ[person=3][num=sg][vclass=trans] -> has
+VBZ[person=3][num=sg][vclass=trans] -> plays
+VBZ[person=3][num=sg][vclass=trans] -> reads
+VBZ[person=3][num=sg][vclass=trans] -> throws
+VB[vclass=intent] -> persuade
+VB[vclass=intrans] -> sleep
+VB[vclass=intrans] -> think
+VB[vclass=prop] -> believe
+VB[vclass=trans] -> go
+VB[vclass=trans] -> have
+VB[vclass=trans] -> play
+VB[vclass=trans] -> read
+VB[vclass=trans] -> throw
+VPG -> VBG[vclass=intent]
+VPG -> VBG[vclass=intent] NP[person=3][num=pl][case=accu]
+VPG -> VBG[vclass=intent] NP[person=3][num=sg][case=accu]
+VPG -> VBG[vclass=intent] NP[person=n3][num=pl][case=accu]
+VPG -> VBG[vclass=intent] NP[person=n3][num=sg][case=accu]
+VPG -> VBG[vclass=intent] PP
+VPG -> VBG[vclass=intrans]
+VPG -> VBG[vclass=intrans] NP[person=3][num=pl][case=accu]
+VPG -> VBG[vclass=intrans] NP[person=3][num=sg][case=accu]
+VPG -> VBG[vclass=intrans] NP[person=n3][num=pl][case=accu]
+VPG -> VBG[vclass=intrans] NP[person=n3][num=sg][case=accu]
+VPG -> VBG[vclass=intrans] PP
+VPG -> VBG[vclass=prop]
+VPG -> VBG[vclass=prop] NP[person=3][num=pl][case=accu]
+VPG -> VBG[vclass=prop] NP[person=3][num=sg][case=accu]
+VPG -> VBG[vclass=prop] NP[person=n3][num=pl][case=accu]
+VPG -> VBG[vclass=prop] NP[person=n3][num=sg][case=accu]
+VPG -> VBG[vclass=prop] PP
+VPG -> VBG[vclass=trans]
+VPG -> VBG[vclass=trans] NP[person=3][num=pl][case=accu]
+VPG -> VBG[vclass=trans] NP[person=3][num=sg][case=accu]
+VPG -> VBG[vclass=trans] NP[person=n3][num=pl][case=accu]
+VPG -> VBG[vclass=trans] NP[person=n3][num=sg][case=accu]
+VPG -> VBG[vclass=trans] PP
+VPInf -> TO VB[vclass=intrans]
+VPInf -> TO VB[vclass=intrans] PP
+VPInf -> TO VB[vclass=trans]
+VPInf -> TO VB[vclass=trans] NP[person=3][num=pl][case=accu]
+VPInf -> TO VB[vclass=trans] NP[person=3][num=pl][case=accu] PP
+VPInf -> TO VB[vclass=trans] NP[person=3][num=sg][case=accu]
+VPInf -> TO VB[vclass=trans] NP[person=3][num=sg][case=accu] PP
+VPInf -> TO VB[vclass=trans] NP[person=n3][num=pl][case=accu]
+VPInf -> TO VB[vclass=trans] NP[person=n3][num=pl][case=accu] PP
+VPInf -> TO VB[vclass=trans] NP[person=n3][num=sg][case=accu]
+VPInf -> TO VB[vclass=trans] NP[person=n3][num=sg][case=accu] PP
+VPInf -> TO VB[vclass=trans] PP
+VP[person=3][num=pl] -> PassVerb[person=3][num=pl][vclass=intent] VPInf
+VP[person=3][num=pl] -> PassVerb[person=3][num=pl][vclass=prop] VPG
+VP[person=3][num=pl] -> PassVerb[person=3][num=pl][vclass=trans]
+VP[person=3][num=pl] -> PassVerb[person=3][num=pl][vclass=trans] NP[person=3][num=pl][case=accu]
+VP[person=3][num=pl] -> PassVerb[person=3][num=pl][vclass=trans] NP[person=3][num=pl][case=accu] PP
+VP[person=3][num=pl] -> PassVerb[person=3][num=pl][vclass=trans] PP
+VP[person=3][num=pl] -> Verb[person=3][num=pl][vclass=intent] VPInf
+VP[person=3][num=pl] -> Verb[person=3][num=pl][vclass=intrans]
+VP[person=3][num=pl] -> Verb[person=3][num=pl][vclass=intrans] PP
+VP[person=3][num=pl] -> Verb[person=3][num=pl][vclass=prop] VPG
+VP[person=3][num=pl] -> Verb[person=3][num=pl][vclass=trans]
+VP[person=3][num=pl] -> Verb[person=3][num=pl][vclass=trans] NP[person=3][num=pl][case=accu]
+VP[person=3][num=pl] -> Verb[person=3][num=pl][vclass=trans] NP[person=3][num=pl][case=accu] PP
+VP[person=3][num=pl] -> Verb[person=3][num=pl][vclass=trans] PP
+VP[person=3][num=sg] -> PassVerb[person=3][num=sg][vclass=intent] VPInf
+VP[person=3][num=sg] -> PassVerb[person=3][num=sg][vclass=prop] VPG
+VP[person=3][num=sg] -> PassVerb[person=3][num=sg][vclass=trans]
+VP[person=3][num=sg] -> PassVerb[person=3][num=sg][vclass=trans] NP[person=3][num=sg][case=accu]
+VP[person=3][num=sg] -> PassVerb[person=3][num=sg][vclass=trans] NP[person=3][num=sg][case=accu] PP
+VP[person=3][num=sg] -> PassVerb[person=3][num=sg][vclass=trans] PP
+VP[person=3][num=sg] -> Verb[person=3][num=sg][vclass=intent] VPInf
+VP[person=3][num=sg] -> Verb[person=3][num=sg][vclass=intrans]
+VP[person=3][num=sg] -> Verb[person=3][num=sg][vclass=intrans] PP
+VP[person=3][num=sg] -> Verb[person=3][num=sg][vclass=prop] VPG
+VP[person=3][num=sg] -> Verb[person=3][num=sg][vclass=trans]
+VP[person=3][num=sg] -> Verb[person=3][num=sg][vclass=trans] NP[person=3][num=sg][case=accu]
+VP[person=3][num=sg] -> Verb[person=3][num=sg][vclass=trans] NP[person=3][num=sg][case=accu] PP
+VP[person=3][num=sg] -> Verb[person=3][num=sg][vclass=trans] PP
+VP[person=n3][num=pl] -> PassVerb[person=n3][num=pl][vclass=intent] VPInf
+VP[person=n3][num=pl] -> PassVerb[person=n3][num=pl][vclass=prop] VPG
+VP[person=n3][num=pl] -> PassVerb[person=n3][num=pl][vclass=trans]
+VP[person=n3][num=pl] -> PassVerb[person=n3][num=pl][vclass=trans] NP[person=n3][num=pl][case=accu]
+VP[person=n3][num=pl] -> PassVerb[person=n3][num=pl][vclass=trans] NP[person=n3][num=pl][case=accu] PP
+VP[person=n3][num=pl] -> PassVerb[person=n3][num=pl][vclass=trans] PP
+VP[person=n3][num=pl] -> Verb[person=n3][num=pl][vclass=intent] VPInf
+VP[person=n3][num=pl] -> Verb[person=n3][num=pl][vclass=intrans]
+VP[person=n3][num=pl] -> Verb[person=n3][num=pl][vclass=intrans] PP
+VP[person=n3][num=pl] -> Verb[person=n3][num=pl][vclass=prop] VPG
+VP[person=n3][num=pl] -> Verb[person=n3][num=pl][vclass=trans]
+VP[person=n3][num=pl] -> Verb[person=n3][num=pl][vclass=trans] NP[person=n3][num=pl][case=accu]
+VP[person=n3][num=pl] -> Verb[person=n3][num=pl][vclass=trans] NP[person=n3][num=pl][case=accu] PP
+VP[person=n3][num=pl] -> Verb[person=n3][num=pl][vclass=trans] PP
+VP[person=n3][num=sg] -> PassVerb[person=n3][num=sg][vclass=intent] VPInf
+VP[person=n3][num=sg] -> PassVerb[person=n3][num=sg][vclass=prop] VPG
+VP[person=n3][num=sg] -> PassVerb[person=n3][num=sg][vclass=trans]
+VP[person=n3][num=sg] -> PassVerb[person=n3][num=sg][vclass=trans] NP[person=n3][num=sg][case=accu]
+VP[person=n3][num=sg] -> PassVerb[person=n3][num=sg][vclass=trans] NP[person=n3][num=sg][case=accu] PP
+VP[person=n3][num=sg] -> PassVerb[person=n3][num=sg][vclass=trans] PP
+VP[person=n3][num=sg] -> Verb[person=n3][num=sg][vclass=intent] VPInf
+VP[person=n3][num=sg] -> Verb[person=n3][num=sg][vclass=intrans]
+VP[person=n3][num=sg] -> Verb[person=n3][num=sg][vclass=intrans] PP
+VP[person=n3][num=sg] -> Verb[person=n3][num=sg][vclass=prop] VPG
+VP[person=n3][num=sg] -> Verb[person=n3][num=sg][vclass=trans]
+VP[person=n3][num=sg] -> Verb[person=n3][num=sg][vclass=trans] NP[person=n3][num=sg][case=accu]
+VP[person=n3][num=sg] -> Verb[person=n3][num=sg][vclass=trans] NP[person=n3][num=sg][case=accu] PP
+VP[person=n3][num=sg] -> Verb[person=n3][num=sg][vclass=trans] PP
+Verb[person=3][num=pl][vclass=intent] -> VBP[person=3][num=pl][vclass=intent]
+Verb[person=3][num=pl][vclass=intrans] -> VBP[person=3][num=pl][vclass=intrans]
+Verb[person=3][num=pl][vclass=prop] -> VBP[person=3][num=pl][vclass=prop]
+Verb[person=3][num=pl][vclass=trans] -> VBP[person=3][num=pl][vclass=trans]
+Verb[person=3][num=sg][vclass=intent] -> VBZ[person=3][num=sg][vclass=intent]
+Verb[person=3][num=sg][vclass=intrans] -> VBZ[person=3][num=sg][vclass=intrans]
+Verb[person=3][num=sg][vclass=prop] -> VBZ[person=3][num=sg][vclass=prop]
+Verb[person=3][num=sg][vclass=trans] -> VBZ[person=3][num=sg][vclass=trans]
+Verb[person=n3][num=pl][vclass=intent] -> VBP[person=n3][num=pl][vclass=intent]
+Verb[person=n3][num=pl][vclass=intrans] -> VBP[person=n3][num=pl][vclass=intrans]
+Verb[person=n3][num=pl][vclass=prop] -> VBP[person=n3][num=pl][vclass=prop]
+Verb[person=n3][num=pl][vclass=trans] -> VBP[person=n3][num=pl][vclass=trans]
+Verb[person=n3][num=sg][vclass=intent] -> VBP[person=n3][num=sg][vclass=intent]
+Verb[person=n3][num=sg][vclass=intrans] -> VBP[person=n3][num=sg][vclass=intrans]
+Verb[person=n3][num=sg][vclass=prop] -> VBP[person=n3][num=sg][vclass=prop]
+Verb[person=n3][num=sg][vclass=trans] -> VBP[person=n3][num=sg][vclass=trans]
+WDT -> that
+WDT -> what
+WDT -> whatever
+WDT -> which
+WDT -> whichever

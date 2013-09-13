@@ -1,0 +1,179 @@
+\documentclass[10pt]{article}
+
+\usepackage{verbatim}
+\usepackage{fullpage}
+
+%page formatting
+\begin{document}
+
+{\bf Homework 1} \hfill {\raggedleft Thomas Torsney-Weir}
+
+\section{Implementation}
+We are testing the IDS, A* with Manhattan distance, and A* with Euclidean
+distance search algorithms.
+
+\subsection{Running}
+The program to solve a puzzle is called {\tt puzzle}.  It takes two arguments.
+The first argument selects the search algorithm.  It can be {\tt i}, {\tt m}, 
+or {\tt e} which indicates IDS, A* with Manhattan distance, and A* with
+Euclidean distance respectively.  The second argument is the puzzle.  This
+is a string of nine numbers which determine the arangement of the puzzle.  The
+goal is always \verb@123456780@.
+
+The application prints five numbers to stdout.  These are states visited, 
+states expanded, solution length, max search depth, and max fringe size in
+order from left to right.
+
+\subsection{Validity}
+The following are outputs showing the internal computions for various 
+pieces of the program.  These can all be turned on by recompiling with
+certain flags \verb1#define1-ed.
+
+\subsubsection{Successor}
+Define \verb1SUCC_DEBUG1 to activate this output.  {\tt orig} is the input
+puzzle and each {\tt next} line are the successors.
+
+\begin{verbatim}
+succ: orig: [4 1 2 7 6 3 0 5 8]
+      next: [4 1 2 0 6 3 7 5 8]
+      next: [4 1 2 7 6 3 5 0 8]
+succ: orig: [4 1 2 7 6 3 0 5 8]
+      next: [4 1 2 0 6 3 7 5 8]
+      next: [4 1 2 7 6 3 5 0 8]
+succ: orig: [4 1 2 0 6 3 7 5 8]
+      next: [4 1 2 7 6 3 0 5 8]
+      next: [4 1 2 6 0 3 7 5 8]
+succ: orig: [4 1 2 7 6 3 5 0 8]
+      next: [4 1 2 7 0 3 5 6 8]
+      next: [4 1 2 7 6 3 0 5 8]
+      next: [4 1 2 7 6 3 5 8 0]
+\end{verbatim}
+
+\subsubsection{Goal Test}
+Define \verb1GOAL_DEBUG1 to activate this output.  {\tt inpt} is the input
+puzzle, {\tt goal} is the goal state, and {\tt bool} will be 1 if the puzzle
+is equal to the goal.
+
+\begin{verbatim}
+goal: inpt: [1 2 3 4 5 0 7 8 6]
+      goal: [1 2 3 4 5 6 7 8 0]
+      bool: 0
+goal: inpt: [1 2 0 4 5 3 7 8 6]
+      goal: [1 2 3 4 5 6 7 8 0]
+      bool: 0
+goal: inpt: [1 2 3 4 5 6 7 8 0]
+      goal: [1 2 3 4 5 6 7 8 0]
+      bool: 1
+\end{verbatim}
+
+\subsubsection{Manhattan Heuristic}
+Define \verb1MAN_DEBUG1 to activate this output.  {\tt puzz} is the input
+puzzle, {\tt goal} is the goal state, and {\tt dist} is the manhattan distance.
+
+\begin{verbatim}
+mand: puzz: [1 2 3 4 5 6 0 8 7]
+      goal: [1 2 3 4 5 6 7 8 0]
+      dist: 2
+mand: puzz: [1 2 3 0 5 6 4 8 7]
+      goal: [1 2 3 4 5 6 7 8 0]
+      dist: 3
+mand: puzz: [1 2 3 4 5 6 8 0 7]
+      goal: [1 2 3 4 5 6 7 8 0]
+      dist: 3
+mand: puzz: [1 0 3 5 2 6 4 8 7]
+      goal: [1 2 3 4 5 6 7 8 0]
+      dist: 5
+\end{verbatim}
+
+\subsubsection{Euclidean Heuristic}
+Define \verb1EUC_DEBUG1 to activate this output.  {\tt inpt} is the input
+puzzle, {\tt goal} is the goal state, and {\tt dist} is the euclidean distance.
+
+\begin{verbatim}
+eucd: puzz: [1 2 3 4 5 6 0 8 7]
+      goal: [1 2 3 4 5 6 7 8 0]
+      dist: 4
+eucd: puzz: [1 2 3 0 5 6 4 8 7]
+      goal: [1 2 3 4 5 6 7 8 0]
+      dist: 5.23607
+eucd: puzz: [1 2 3 4 0 6 8 5 7]
+      goal: [1 2 3 4 5 6 7 8 0]
+      dist: 5.41421
+eucd: puzz: [1 2 3 4 5 6 8 7 0]
+      goal: [1 2 3 4 5 6 7 8 0]
+      dist: 2
+\end{verbatim}
+
+\subsection{Experiment}
+To test, we ran 100 puzzles for each solution length from 1 to 25.  Each
+puzzle was run using IDS, A* with the Manhattan distance heuristic, and
+A* with the Euclidean distance heuristic.  The results are below.
+
+\section{Results}
+\begin{tiny}
+\begin{tabular}{*{10}{|c}|}
+  & \multicolumn{3}{|c|}{IDS} & \multicolumn{3}{|c|}{A* Manhattan} & 
+    \multicolumn{3}{|c|}{A* Euclidean} \\
+d & expanded & max fringe & branch factor & 
+    expanded & max fringe & branch factor & 
+    expanded & max fringe & branch factor\\
+0 & 0 & 0 & None & 0 & 0 & None & 0 & 0 & None\\
+1 & 3 & 3 & 3.999 & 3 & 3 & 1.999 & 3 & 3 & 1.999\\
+2 & 15 & 9 & 3.405 & 6 & 4 & 1.302 & 6 & 4 & 1.302\\
+3 & 47 & 22 & 3.029 & 9 & 5 & 1.150 & 9 & 5 & 1.150\\
+4 & 119 & 52 & 2.841 & 12 & 6 & 1.091 & 12 & 6 & 1.091\\
+5 & 410 & 171 & 2.898 & 15 & 7 & 1.061 & 17 & 7 & 1.114\\
+6 & 1203 & 494 & 2.934 & 19 & 8 & 1.044 & 37 & 12 & 1.248\\
+7 & 3099 & 1263 & 2.865 & 24 & 10 & 1.062 & 52 & 17 & 1.252\\
+8 & 8074 & 3283 & 2.819 & 24 & 10 & 1.026 & 65 & 20 & 1.242\\
+9 & 23643 & 9600 & 2.831 & 29 & 11 & 1.039 & 37 & 13 & 1.087\\
+10 & 56218 & 22817 & 2.797 & 47 & 16 & 1.094 & 60 & 20 & 1.139\\
+11 & 17927 & 72745 & 2.812 & 51 & 17 & 1.088 & 67 & 21 & 1.125\\
+12 & 53863 & 21854 & 2.844 & 65 & 20 & 1.102 & 80 & 25 & 1.130\\
+13 & 13498 & 54766 & 2.811 & 84 & 25 & 1.118 & 87 & 27 & 1.118\\
+14 & 37404 & 15175 & 2.808 & 118 & 33 & 1.143 & 116 & 36 & 1.134\\
+15 & 10135 & 41122 & 2.797 & 126 & 35 & 1.130 & 109 & 31 & 1.115\\
+16 & 23322 & 94625 & 2.755 & 117 & 33 & 1.108 & 112 & 32 & 1.103\\
+17 & 77220 & 31329 & 2.786 & 121 & 34 & 1.100 & 115 & 33 & 1.094\\
+18 & 15366 & 62343 & 2.724 & 129 & 35 & 1.095 & 115 & 33 & 1.083\\
+19 & - & - & - & 143 & 39 & 1.094 & 109 & 33 & 1.067\\
+20 & - & - & - & 133 & 36 & 1.079 & 116 & 35 & 1.064\\
+21 & - & - & - & 132 & 35 & 1.071 & 125 & 37 & 1.064\\
+22 & - & - & - & 215 & 54 & 1.102 & 125 & 38 & 1.058\\
+23 & - & - & - & 212 & 54 & 1.092 & 126 & 38 & 1.052\\
+24 & - & - & - & 195 & 50 & 1.080 & 130 & 39 & 1.050\\
+25 & - & - & - & 171 & 44 & 1.066 & 130 & 40 & 1.044\\
+\end{tabular}
+\end{tiny}
+
+\section{Analysis}
+IDS performs very poorly on this problem.  It simply keeps too many states
+in memory.  It could not solve puzzles with solution lengths greater than 18.
+The program would run out of memory before it solved them.  This can be seen
+in the maximum fringe in the table.  This is the maximum number of nodes kept
+in memory at each search step.  The fringe is also expanding exponentially
+for the solution depth.  Also note the branching factor.  It never drops below
+2.5 for any solution size.  
+The strength of IDS is that it is simpler to 
+implement since we do not have to come up with a heuristic function.  However, 
+it expands far too many states before finding a solution and this prevents it 
+from solving longer puzzles.
+
+A* performs far better than IDS.  Using either heuristic it performed far 
+better then IDS.  In fact, it found solutions where IDS failed.  It also kept
+fewer nodes in memory and expanded fewer states.  Furthermore, the branching 
+factor for either heuristic is very close to one.  This means that A* is
+looking at about one node at each state.  It is making few mistakes finding
+the solution.  This is also backed up by the number of nodes expanded and
+the max fringe size.  It is increasing almost linearly with the size of the 
+solution.
+
+The performance of these two heuristics is difficult to compare.  The number 
+of expanded nodes, max fringe size, and branching factor are very similar.  
+This makes sense as these two heuristics are almost the same algorithm.  
+Manhattan distance returns the sum of the horizonal and vertical error distance
+while Euclidean distance is just the hypotenuse of that triangle.  You use
+the exact same 2 measurements --- vertical error and horizontal error --- for
+both heuristics.  Either of these performs very well on puzzles of any size.
+
+\end{document}

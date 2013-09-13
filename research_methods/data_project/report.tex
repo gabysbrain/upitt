@@ -1,0 +1,99 @@
+\documentclass{article}
+
+\usepackage{verbatim}
+
+\author{Thomas Torsney-Weir}
+\title{Is Video Poker Fair?}
+
+%page formatting
+\setlength{\parskip}{2.5ex plus 0.5ex minus 0.5ex}
+\setlength{\parindent}{0ex}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+Video poker works by having the player pay an initial fee.  The machine then
+randomly picks five cards out of a standard 52 card deck.  The player is then 
+offered the opportunity to exchange up to five cards for new ones from the
+remaining deck.  Finally, the hand is evaluated and you receive a payoff 
+--- which may be zero --- based on the quality of your hand.
+
+I intend to investigate whether the payoffs for various video poker hands 
+is fair.  In other words does the expected payoff for the various hands 
+make it profitable for the player to play.
+
+\section{Experiment}
+I will simplify the game by removing the ``draw'' step.  This is the step
+where the player is offered the chance to exchange some or all of their cards
+for new ones.  I will only evaluate the original five card hand.  There is a
+certain strategy in picking the best cards to exchange.  This will make the 
+programming simpler and remove any assumptions of strategy from the hands 
+generated in the experiment.
+
+I will randomly generate five distinct cards per trial.  Each of the cards 
+has an equal chance of occurring but can only occur once per hand.  The hand 
+will be evaluated to determine what class it is in.  The class determines 
+the payoff.  Here are the classes listed in order from best to worst: royal 
+flush, straight flush, four of a kind, full house, flush, straight, three of 
+a kind, two pair, and one pair.  The payoff schedule for a one dollar fee in a
+typical game is as follows: 250, 50, 25, 9, 6, 4, 3, 2, 1 for royal flush to
+one pair respectively.  In the case where a hand can take multiple 
+classes you use the best hand.  The value of each hand will be equal to 
+the payoff.  I will also count the occurrences of each class of hands.
+
+The number of distinct poker hands is 5 choose 2.  There's no reason to 
+generate any more than this number of hands.  However, these hands will 
+be generated with a uniform probability.  The payoffs for the game follow
+an exponential distribution.  I might need to generate more than the 5 choose
+2 hands before I get a royal flush.  
+
+\section{Results}
+The first step was to test for convergence.  I ran a minimum of five sets of
+100,000 hands each.  I then did a pair-wise T-test to see the chance my
+distributions came from the same distribution.  The matrix of p values is below:
+\begin{tabular}{|c||c|c|c|c|c|}
+\hline 
+   & x1   & x2   & x3   & x4   & x5   \\
+\hline 
+\hline 
+x1 & 1    & 0.31 & 0.77 & 0.84 & 0.42 \\
+\hline 
+x2 & 0.31 & 1    & 0.41 & 0.22 & 0.82 \\
+\hline 
+x3 & 0.77 & 0.41 & 1    & 0.60 & 0.55 \\
+\hline 
+x4 & 0.84 & 0.22 & 0.60 & 1    & 0.30 \\
+\hline 
+x5 & 0.42 & 0.82 & 0.55 & 0.30 & 1    \\
+\hline 
+\end{tabular}
+
+These numbers are all well above 0.05 so with over 95 percent confidence they
+come from the same distribution.  There was no reason to run any more samples.
+For the remainder of my experiment I combined these five experiments.
+
+The mean of the payoffs is the expected return from playing the game.  In this
+case the mean is 0.63 which means that you can expect a return of 63 cents on
+the dollar when you play the game.  This would indicate that the game is not
+fair.
+
+To further evaluate the payoffs I did a Chi-squared test on the counts of
+each class of hands against the probabilities of each hand type implied by 
+the payoffs.  I assumed that the zero valued hand had a probability of 1
+and the rest had decreasing probabilities in the following fashion: 1, 0.5,
+0.33, 0.25, 0.2, 0.143, 0.1, 0.0385, 0.0196, 0.00398.  These were normalized
+for the Chi-squared test.  The results of this test was a probability of
+less than $2.2*10^{-16}$ so these distributions are vastly different.  The
+$\chi^2$ value is 298972.5 and the number of degrees of freedom is 9.
+
+\section{Conclusion}
+In summary, the payoff from video poker does not seem worth it.  A player
+could expect to lose almost 40 cents every time they play.  Furthermore, the
+payoffs don't match the distribution of hands.  It might not be a good idea
+to try and make a living from playing video poker.  On the other hand, there
+is a fun component to the whole thing and it's difficult to gauge that.
+
+\end{document}
+

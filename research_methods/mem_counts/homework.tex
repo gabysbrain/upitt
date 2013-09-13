@@ -1,0 +1,25 @@
+\documentclass[10pt]{article}
+
+\usepackage{fullpage}
+\usepackage{longtable}
+\usepackage[pdftex]{graphicx}
+\DeclareGraphicsExtensions{.pdf,.jpg}
+
+% no numbers, etc
+\pagestyle{empty}
+
+\begin{document}
+
+{\bf Research Methods Homework} \hfill {\raggedleft Thomas Torsney-Weir}
+
+I used the cachegrind tool from valgrind to compute the number of memory
+references in my quicksort program.  It performs a cache simulation but 
+it also returns the number of data memory accesses.  I ran the program
+five times and every time the number of memory accesses was 117,656.  This
+number includes memory used for printing the result to the screen, 
+initializing the array, and any other operations c programs do before and 
+after the main program in addition to the number of accesses for the quicksort
+function itself.
+
+\end{document}
+

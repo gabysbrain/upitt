@@ -1,0 +1,165 @@
+\documentclass[10pt]{article}
+
+\nofiles
+
+\usepackage{fullpage}
+\usepackage[pdftex]{graphicx}
+\DeclareGraphicsExtensions{.pdf,.jpg}
+
+% no numbers, etc
+\pagestyle{empty}
+
+\begin{document}
+
+{\bf Problem Set 1} \hfill {\raggedleft Thomas Torsney-Weir}
+
+%Each homework problem goes here
+\begin{enumerate}
+\item % loop program for f(x) = 3x
+  \begin{verbatim}
+INPUT(X_1)
+U_1 <- 0
+U_1 <- U_1 + 1
+U_1 <- U_1 + 1
+U_1 <- U_1 + 1
+Y_1 <- 0
+FOR X_2 TIMES DO
+  FOR X_1 TIMES DO
+    Y_1 <- Y_1 + 1
+  ENDFOR
+ENDFOR
+OUTPUT(Y_1)
+  \end{verbatim}
+
+\item % even-odd v1
+  \begin{verbatim}
+INPUT(X_1)
+Y_1 <- 1
+Y_2 <- 0
+FOR X_1 TIMES DO
+  X_2 <- Y_1
+  Y_1 <- Y_2
+  Y_2 <- X_2
+ENDFOR
+OUTPUT(Y_1)
+  \end{verbatim}
+
+\item % even-odd v2
+  $P_{evenodd1}(X_1, X_2)$ Even-odd program from question 2
+  
+  Main Program:
+  \begin{verbatim}
+INPUT(X_1, X_2)
+Y_1 <- P_evenodd1(X_1, X_2)
+Y_2 <- P_neg(Y_1)
+UNTIL Y_2 TRUE DO
+ENDUNTIL
+OUTPUT(Y_1)
+  \end{verbatim}
+
+\item % complex function
+  $P_{add}(X_1, X_2)$ General addition program:
+  \begin{verbatim}
+INPUT(X_1, X_2)
+Y_1 <- X_1
+FOR X_2 TIMES DO
+  Y_1 <- Y_1 + 1
+ENDFOR
+OUTPUT(Y_1)
+  \end{verbatim}
+
+  $P_{monus}(X_1)$ Returns $X_1 - 1$ if $X_1 > 0$ else 0:
+  \begin{verbatim}
+INPUT(X_1)
+FOR X_1 TIMES DO
+  Y_1 <- T_1
+  T_1 <- T_1 + 1
+ENDFOR
+OUTPUT(Y_1)
+  \end{verbatim}
+
+  $P_{blv}(X_1)$ Returns 1 if $X_1 > 0$ else 0:
+  \begin{verbatim}
+INPUT(X_1)
+Y_1 <- 0
+FOR X_1 TIMES DO
+  Y_1 <- 0
+  Y_1 <- Y_1 + 1
+ENDFOR
+OUTPUT(Y_1)
+  \end{verbatim}
+
+  $P_{neg}(X_1)$ Returns 0 if $X_1 > 0$ else 1:
+  \begin{verbatim}
+INPUT(X_1)
+Y_1 <- Y_1 + 1
+FOR X_1 TIMES DO
+  Y_1 <- 0
+ENDFOR
+OUTPUT(Y_1)
+  \end{verbatim}
+
+  $P_{sub}(X_1, X_2)$ Computes $X_1 - X_2$ if $X_1 \ge X_2$, otherwise 0:
+  \begin{verbatim}
+INPUT(X_1, X_2)
+Y_1 <- X_1
+FOR X_2 TIMES DO
+  Y_1 <- P_monus(Y_1)
+ENDFOR
+OUTPUT(Y_1)
+  \end{verbatim}
+
+  $P_{add}(X_1, X_2)$ Returns $X_1 + X_2$:
+  \begin{verbatim}
+INPUT(X_1, X_2)
+Y_1 <- X_1
+FOR X_2 TIMES DO
+  Y_1 <- Y_1 + 1
+ENDFOR
+OUTPUT(Y_1)
+  \end{verbatim}
+
+  $P_{mult}(X_1, X_2)$ Returns $X_1 * X_2$:
+  \begin{verbatim}
+INPUT(X_1, X_2)
+Y_1 <- 0
+FOR X_2 TIMES DO
+  Y_1 <- P_add(Y_1, X_1)
+ENDFOR
+OUTPUT(Y_1)
+  \end{verbatim}
+
+  $P_{sqr}(X_1)$ Returns $X_1 * X_1$:
+  \begin{verbatim}
+INPUT(X_1)
+Y_1 <- P_mult(X_1, X_1)
+OUTPUT(Y_1)
+  \end{verbatim}
+
+  $P_{gt}(X_1, X_2)$ Returns 1 if $X_1 > X_2$, otherwise returns 0:
+  \begin{verbatim}
+INPUT(X_1, X_2)
+Y_1 <- P_sub(X_1, X_2)
+Y_1 <- P_neg(Y_1)
+OUTPUT(Y_1)
+  \end{verbatim}
+
+  Main program:
+\begin{verbatim}
+INPUT(X_1)
+Y_1 <- 0
+U_1 <- P_sqr(Y_1)
+T_1 <- P_gt(U_1, X_1)
+UNTIL T_1 DO
+  Y_1 <- Y_1 + 1
+  U_1 <- P_sqr(Y_1)
+  T_1 <- P_gt(U_1, X_1)
+ENDUNTIL
+Y_1 <- P_monus(Y_1)
+OUTPUT(Y_1)
+  \end{verbatim}
+
+\end{enumerate}
+
+\end{document}
+

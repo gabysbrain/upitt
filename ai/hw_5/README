@@ -1,0 +1,31 @@
+=== Easy run ===
+> gen_model.sh # This will generate classifier.model from data in data/
+> run_model.sh <test.arff> # Test test.arff on the classifier
+
+=== Report ===
+Located in report/report.pdf
+
+=== Notes on file locations ===
+combine_data.sh, gen_model.sh, run_model.sh, and compute_header.sh all depend
+on census.txt, NewYork.train, and Ohio.train on being in a data/ directory.
+
+=== Scripts ===
+* gen_model.sh: Generate classifier.model from all the training data in data/
+* run_model.sh: Take a file as an argument and test it on classifier.model
+* agg_data.sh: Aggregate the results from all the folds
+* classify.sh: Given a test and train arff file run all 3 classifiers and 
+               write out the confusion matrix
+* classify_all.sh: For each fold under eval/ run classify.sh
+* combine_data.sh: Combine the .train files and the census file
+* compute_header.sh: compute the header which is an aggregate from the census
+                     file and the state files
+* compute_results.py: python script that calculates accuracy, precision, 
+                      recall, and f score from a 2x2 confusion matrix
+* create_folds.sh: Recreate the eval/ directory and a directory for each
+                   of the k trials in k-fold validation
+* csv2arff.py: Converts a csv file to arff
+* hard_select_attrs.sh: cuts the 5 most important attributes out of a csv file
+* run_expr.sh: Runs a k-fold validation experiment
+* select_attrs.sh: Calls weka's Chi^2 evaluator on an arff file to filter
+                   out a certain number of attributes
+

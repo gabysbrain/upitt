@@ -1,0 +1,21 @@
+set xlabel "Number of Features"
+set ylabel "Accuracy %"
+set terminal pdf 
+set output "attr_acc_train.pdf"
+set title "Accuracy on Training Set"
+plot [] [0.5:1] "attr_acc_train.plotdat" using 1:2 t "Baseline" with lines, "attr_acc_train.plotdat" using 1:3 t "Naive Bayes" smooth csplines, "attr_acc_train.plotdat" using 1:4 t "J48" smooth csplines
+
+set output "attr_acc_test.pdf"
+set title "Accuracy on Test Set"
+plot [] [0.5:1] "attr_acc_test.plotdat" using 1:2 t "Baseline" with lines, "attr_acc_test.plotdat" using 1:3 t "Naive Bayes" smooth csplines, "attr_acc_test.plotdat" using 1:4 t "J48" smooth csplines
+
+set xlabel "Percent Data Used for Training"
+set output "datasize_train.pdf"
+set title "Accuracy on Training Set"
+plot [] [0.5:1] "datasize_train.plotdat" using 1:2 t "Baseline" with lines, "datasize_train.plotdat" using 1:3 t "Naive Bayes" smooth csplines, "datasize_train.plotdat" using 1:4 t "J48" smooth csplines
+
+set output "datasize_test.pdf"
+set title "Accuracy on Test Set"
+plot [] [0.5:1] "datasize_test.plotdat" using 1:2 t "Baseline" with lines, "datasize_test.plotdat" using 1:3 t "Naive Bayes" smooth csplines, "datasize_test.plotdat" using 1:4 t "J48" smooth csplines
+
+

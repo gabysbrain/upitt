@@ -1,0 +1,49 @@
+verb: promise
+  sense: 1
+  gloss: make a promise or commitment
+  example: 
+  synset: assure
+  hypernyms: declare -> state -> express
+
+  sense: 2
+  gloss: promise to undertake or give
+  example: I promise you my best effort
+  synset: 
+  hypernyms: declare -> state -> express
+
+  sense: 3
+  gloss: make a prediction about; tell in advance
+  example: Promise the outcome of an election
+  synset: predict, foretell, prognosticate, call, forebode, anticipate
+  hypernyms: guess -> speculate -> reason -> think
+
+  sense: 4
+  gloss: give grounds for expectations
+  example: The new results were promising
+  example: The results promised fame and glory
+  synset: 
+  hypernyms: be
+
+verb: bet
+  sense: 1
+  gloss: maintain with or as if with a bet
+  example: I bet she will be there!
+  synset: wager
+  hypernyms: predict, foretell, prognosticate, call, forbode, anticipate, promise -> guess, venture, pretend, hazard -> speculate -> reason -> think, cogitate, cerebrate
+
+  sense: 2
+  gloss: stake on the outcome of an issue
+  example: I bet $100 on that new horse
+  example: She played all her money on the dark horse
+  synset: wager, play
+  hypernyms: gamble -> play -> compete, vie, contend
+
+  sense: 3
+  gloss: have faith or confidence in
+  example: you can bet on me to help you at any time
+  example: bet on your friends for support
+  example: you can bet on that
+  example: bet on your family in times of crisis
+  synset: count, depend, look, calculate, reckon
+  hypernyms: trust, swear, rely, bank -> believe -> accept -> evaluate, pass judgement, judge -> think, cogitate, cerebrate
+

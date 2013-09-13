@@ -1,0 +1,93 @@
+\documentclass{article}
+
+\usepackage{verbatim}
+\usepackage{fullpage}
+
+\author{Frank Librato, Thomas Torsney-Weir}
+\title{Semantic Role Labeling}
+
+%page formatting
+\setlength{\parskip}{2.5ex plus 0.5ex minus 0.5ex}
+\setlength{\parindent}{0ex}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+Our project is awesome therefore we are awesome.
+
+\section{Tree Distance Measure}
+We believe that by computing a distance to a set of standard parse trees
+we can better identify their argument types.  The intuition is that 
+arguments will tend to follow a set parse tree structure.  We will 
+compute the difference between the input tree and the standard parse trees.
+
+Each parse tree will be binarized.  We will then represent each tree as a 
+list of integers cooresponding to the nonterminal labels.  The first 
+integer is always the root.  Because trees may be of different depth, we will
+pad the list with zeros to make all trees the same length.
+
+We will also constrain the maximum tree depth to be 3.
+
+\section{System Description}
+We will use Support Vector Machines for both the identifying and labeling
+classifiers.
+
+\subsection{Preprocessing}
+We will preprocess the parse tree using Xue and Palmer's method of pruning
+out unlikely argument constituents from the parse tree.
+
+A further step will be to compute a tree distance measure.  We have grouped
+argument trees into a set of classes.  This measure will tell us for each 
+subtree what is the distance from the input tree to the most $n$ most likely
+standard trees.  These distance metrics will be added to the feature vector
+for training and classification.
+
+\subsection{Labeling Strategy}
+We will use the two-stage labeling strategy that most of the CoNLL-2005 
+systems used.  For each constituent we will first identify whether it is
+an argument or not.  We will then feed this information into an identifier
+to identify the argument type of the constituent.
+
+\subsection{Identifier Feature Coding}
+Here is a list of the training features used in the identifier.  For the 
+testing features we removed any features stemming from the argument and 
+the subcategorization frame label.
+
+\begin{description}
+\item[Parse Tree:] The full charniack parse tree for the constituent.
+\item[Tree Distance:] The distance from the constituent's parse tree to 
+                      one of the standard trees.
+\item[Argument Head:] The head word of the argument.
+\item[Argument Label:] The nonterminal label on the root of the parse tree
+                       for the argument.
+\item[Verb:] The verb for which we want to identify arguments.
+\item[Subcategorization:] The subcatorization frame label for the verb.
+\end{description}
+
+\subsection{Labeling Feature Coding}
+Here is a list of the training features used in the labeler.  For the 
+testing features we removed any features stemming from the argument and 
+the subcategorization frame label.
+
+\begin{description}
+\item[Parse Tree:] The full charniack parse tree for the constituent.
+\item[Tree Distance:] The distance from the constituent's parse tree to 
+                      one of the standard trees.
+\item[Identifier Result:] A boolean indicating whether the identifier thought
+                          this was an argument.
+\item[Argument Head:] The head word of the argument.
+\item[Argument Label:] The nonterminal label on the root of the parse tree
+                       for the argument.
+\item[Verb:] The verb for which we want to identify arguments.
+\item[Subcategorization:] The subcatorization frame label for the verb.
+\end{description}
+
+\section{Experiments}
+We will compare the output of our algorithm with and without the tree
+distance measure.  We will also try various sizes for the set of standard
+trees.  Some sizes to try are 1, 2, and the maximum number of arguments.
+
+\end{document}
+

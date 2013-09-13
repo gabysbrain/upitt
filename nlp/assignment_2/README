@@ -1,0 +1,10 @@
+NLP Assignment #1
+
+Files:
+torsneyweirQ1HW2.py
+
+How to run:
+> python torsneyweirQ1HW2.py <train> <test>
+<train> and <test> are the corpus files for the training and test set of
+the hmm respectively.
+

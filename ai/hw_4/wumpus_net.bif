@@ -1,0 +1,44 @@
+// Bayesian network 
+network "InternalNetwork" { //5 variables and 5 probability distributions
+}
+variable  "su" { //2 values
+	type discrete[2] {  "true"  "false" };
+	property "position = (238, 58)" ;
+}
+variable  "sl" { //2 values
+	type discrete[2] {  "true"  "false" };
+	property "position = (162, 136)" ;
+}
+variable  "sr" { //2 values
+	type discrete[2] {  "true"  "false" };
+	property "position = (311, 143)" ;
+}
+variable  "sd" { //2 values
+	type discrete[2] {  "true"  "false" };
+	property "position = (232, 249)" ;
+}
+variable  "w" { //2 values
+	type discrete[2] {  "true"  "false" };
+	property "position = (233, 153)" ;
+}
+probability (  "su"  "w" ) { //2 variable(s) and 4 values
+	table 
+		 1.0 0.0394 0.0 0.9606;
+}
+probability (  "sl"  "w" ) { //2 variable(s) and 4 values
+	table 
+		 1.0 0.0394 0.0 0.9606;
+}
+probability (  "sr"  "w" ) { //2 variable(s) and 4 values
+	table 
+		 1.0 0.0394 0.0 0.9606;
+}
+probability (  "sd"  "w" ) { //2 variable(s) and 4 values
+	table 
+		 1.0 0.0394 0.0 0.9606;
+}
+probability (  "w" ) { //1 variable(s) and 2 values
+	table 
+		0.01	// p(true | evidence )
+		0.99; 	// p(false | evidence );
+}

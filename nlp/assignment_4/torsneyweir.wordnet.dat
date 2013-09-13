@@ -1,0 +1,106 @@
+For matching the heads of roles, very few words had useful common ancestors 
+on word net.  Many themes are proper nouns which don't show up in word net.  
+With the exception of the theme of sense 2 of bet these all have a common 
+ancestor near the top of the hypernym tree.  This wouldn't be very helpful 
+for selectional restrictions.  Selecting on the phrase type seems like a much 
+better option.
+
+verb: promise
+  sense: 1
+  gloss: make a promise or commitment
+  thematic roles:
+    theme: promised that there would be a full examination (sent 8)
+      heads: examination
+      most common ancestor: work
+    agent: I have promised (sent 4)
+      heads: I
+      most common ancestor: person (not in word net)
+    beneficiary: promised him (sent 4)
+      heads: him, defendants
+      most common ancestor: person
+    content: promised him that I would approach you to see if you would be able to co-operate with us in the planned work (sent 4)
+      heads: approach, pay
+      most common ancestor: act
+
+  sense: 2
+  gloss: promise to undertake or give
+  thematic roles:
+    content: promised to review the austerity measures (sent 2)
+      heads: review, let, examination, amend
+      most common ancestors: act, test
+    agent: The hard men at the finance ministry (sent 2)
+      heads: men, Mr Hurd, Mr Krenz, Mr Robinson
+      most common ancestor: person (not in word net)
+    beneficiary: promised ... for next month's special congress (sent 8)
+      heads: congress
+      most common ancestor: entity
+
+  sense: 3
+  gloss: make a prediction about; tell in advance
+  thematic roles:
+    content: promises to be the best ever (sent 3)
+      heads: be, buy
+      most common ancestor: be, act
+    force: the 1991 race promises (sent 3)
+      heads: race
+      most common ancestor: entity
+    agent: you've been promising (sent 7)
+      heads: you
+      most common ancestor: person
+
+  sense: 4
+  gloss: give grounds for expectations
+  thematic roles:
+    force: a book that promises (sent 1)
+      heads: book, methods, poems, party
+      most common ancestor: entity
+    theme: promises `the inside story" of the thrice-weekly soap opera (sent 1)
+      heads: story
+      most common ancestor: entity
+    result: crossing the species-lines that has stopped nature cold (sent 5)
+      heads: crossing, ensure
+      most common ancestor: act, entity
+    agent: I promised (sent 9)
+      heads: I, Robson
+      most common ancestor: person
+    content: promised to explain (sent 9)
+      heads: bring, explain, be, promotion, make
+      most common ancestor: act, be
+    beneficiary: to promise Gascoign (sent 12)
+      heads: Gascoign
+      most common ancestor: person
+
+verb: bet
+  sense: 1
+  gloss: maintain with or as if with a bet
+  thematic roles:
+    agent: I bet (sent 1)
+      heads: I, you
+      most common ancestor: person (not in word net)
+    theme: bet a fortune (sent 8)
+      heads: them, fortune, go, help
+      most common ancestors: entity, act (not in word net)
+    content: bet he drinks Carling Intergalactic Gargle-blasters (sent 11)
+      heads: am, drinks
+      most common ancestors: state (not in word net), consume
+
+  sense: 2
+  gloss: stake on the outcome of an issue
+  thematic roles:
+    agent: Black may have betted (sent 2)
+      heads: Black, gambling-ring, jockey, punters, one, me
+      most common ancestor: person (not in word net)
+    theme: betted on the race (sent 2)
+      heads: race, games, another, himself, old, horses
+      most common ancestors: contest, being
+
+  sense: 3
+  gloss: have faith or confidence in
+  thematic roles:
+    agent: you can bet (sent 6)
+      heads: you
+      most common ancestor: person
+    theme: bet on that (sent 6)
+      heads: that
+      most common ancestor: entity
+

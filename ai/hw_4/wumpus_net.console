@@ -1,0 +1,65 @@
+JavaBayes Version 0.346
+Copyright 1996 - 1997 Carnegie Mellon University 
+Copyright 1998 - 2000 Fabio Gagliardi Cozman 
+<fgcozman@usp.br>
+<http://www.cs.cmu.edu/~fgcozman/home.html>
+JavaBayes is a system for inferences with Bayesian 
+networks entirely written in Java.
+More documentation at
+<http://www.cs.cmu.edu/~javabayes/>
+
+JavaBayes starts in Move mode.
+To start editing networks, press the Create button and
+click on the JavaBayes editor, or load a network using
+the Network->Open menu.
+
+
+Loading /Users/tom/Projects/pitt/ai/hw_4/wumpus_net.bif
+	File loaded.
+
+To edit attributes of a node, click on it.
+
+To edit attributes of a node, click on it.
+
+	File saved.
+
+To observe a node, click on it.
+
+To query on a particular node, click on it.
+
+Posterior distribution:
+probability (  "w" ) { //1 variable(s) and 2 values
+	table 
+		0.2040566461249643	// p(true | evidence )
+		0.7959433538750357; 	// p(false | evidence );
+}
+To observe a node, click on it.
+
+To query on a particular node, click on it.
+
+Posterior distribution:
+probability (  "w" ) { //1 variable(s) and 2 values
+	table 
+		0.8667887498170642	// p(true | evidence )
+		0.13321125018293575; 	// p(false | evidence );
+}
+To observe a node, click on it.
+
+To query on a particular node, click on it.
+
+Posterior distribution:
+probability (  "w" ) { //1 variable(s) and 2 values
+	table 
+		0.9939813085756019	// p(true | evidence )
+		0.006018691424398151; 	// p(false | evidence );
+}
+To observe a node, click on it.
+
+To query on a particular node, click on it.
+
+Posterior distribution:
+probability (  "w" ) { //1 variable(s) and 2 values
+	table 
+		0.9997614845677933	// p(true | evidence )
+		2.3851543220671176E-4; 	// p(false | evidence );
+}

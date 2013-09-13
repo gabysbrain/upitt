@@ -1,0 +1,170 @@
+\documentclass[10pt]{article}
+
+\usepackage{verbatim}
+\usepackage{fullpage}
+\usepackage[pdftex]{graphicx}
+\DeclareGraphicsExtensions{.pdf,.jpg}
+
+%page formatting
+\begin{document}
+
+{\bf Homework 5} \hfill {\raggedleft Thomas Torsney-Weir}
+
+\section{Combining Data}
+It would be expected that the voter contributions would be very different
+in Ohio and New York.  Therefore, to try and get a better idea of the national
+voting pattern I combined the two files in order to minimize a bias towards
+one locality or another.
+
+\section{Feature Selection}
+In order to do feature selection I used a Chi-squared test on each individual
+attribute.  This will compute the statistical significance of each attribute
+against the class.  These scores were then ranked and the top \emph{n} 
+attributes were used for classification and training.  This will select the 
+statistically most important attributes and use those.
+
+The top 5 attributes are:
+\begin{itemize}
+\item Date of donation
+\item Occupation
+\item Households: No Social Security income
+\item Population 25 years and over: Female; Masters degree
+\item Total population: In family households
+\end{itemize}
+
+The results below are averaged from 5-fold cross validation.  The baseline
+algorithm simply picks the most common class.
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+N & Baseline & Bayes & J48 \\
+ \hline\hline 
+1 & 0.555 & 0.646 & 0.822 \\
+5 & 0.555 & 0.679 & 0.868 \\
+10 & 0.555 & 0.629 & 0.858 \\
+15 & 0.555 & 0.615 & 0.852 \\
+20 & 0.555 & 0.614 & 0.874 \\
+30 & 0.555 & 0.612 & 0.874 \\
+40 & 0.555 & 0.614 & 0.871 \\
+50 & 0.555 & 0.613 & 0.879 \\
+\hline
+\end{tabular}
+\end{center}
+\caption{Accuracy on training set}
+\end{table}
+
+\includegraphics{attr_acc_train.pdf}
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+N & Baseline & Bayes & J48 \\
+ \hline\hline 
+1 & 0.555 & 0.646 & 0.813 \\
+5 & 0.555 & 0.684 & 0.823 \\
+10 & 0.555 & 0.627 & 0.802 \\
+15 & 0.555 & 0.613 & 0.793 \\
+20 & 0.555 & 0.614 & 0.812 \\
+30 & 0.555 & 0.611 & 0.810 \\
+40 & 0.555 & 0.613 & 0.806 \\
+50 & 0.555 & 0.612 & 0.808 \\
+\hline
+\end{tabular}
+\end{center}
+\caption{Accuracy on test set}
+\end{table}
+
+\includegraphics{attr_acc_test.pdf}
+
+\section{Training Data}
+Once I found the optimal number of features to use I fixed the feature 
+selection algorithm to use 10 features and then began experimenting
+on how much training data is actually required.  To do this I ran k-fold
+cross validation but using $1/k$ of the data for training and the rest for
+testing.  Therefore, 10-fold cross validation is equivalent to only using
+10% of these data for training.  The remaining 90% is used for testing.
+
+The baseline algorithm below simply picks the most common class.
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+pct & Baseline & Bayes & J48 \\
+ \hline\hline 
+95 & 0.555 & 0.647 & 0.864 \\
+90 & 0.555 & 0.690 & 0.868 \\
+80 & 0.555 & 0.689 & 0.819 \\
+75 & 0.555 & 0.660 & 0.866 \\
+50 & 0.555 & 0.6172 & 0.851 \\
+25 & 0.555 & 0.629 & 0.783 \\
+20 & 0.555 & 0.648 & 0.801 \\
+10 & 0.555 & 0.666 & 0.768 \\
+5 & 0.555 &  0.652 & 0.773 \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\includegraphics{datasize_train.pdf}
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+pct & Baseline & Bayes & J48 \\
+ \hline\hline 
+95 & 0.555 & 0.646 & 0.810 \\
+90 & 0.555 & 0.693 & 0.828 \\
+80 & 0.555 & 0.692 & 0.819 \\
+75 & 0.555 & 0.651 & 0.828 \\
+50 & 0.555 & 0.620 & 0.813 \\
+25 & 0.555 & 0.622 & 0.747 \\
+20 & 0.555 & 0.647 & 0.75 \\
+10 & 0.555 & 0.658 & 0.719 \\
+5 & 0.555 & 0.638 & 0.688 \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\includegraphics{datasize_test.pdf}
+
+\section{Learning Algorithm}
+In this case the J48 decision tree algorithm did far better than Naive Bayes.
+However, the number of attributes chosen affected the algorithm far more than
+for Naive Bayes.  Because it has more attributes to work with it's more 
+susceptible to over-fitting.  During learning, the decision tree algorithm will 
+continue dividing data until all the attributes are exhausted.  If some of 
+these attributes are specific to the training set then J48 won't preform as
+well on the test set.  However, both these data sets show a relatively limited
+sample of the US population.  If the decision tree is shown a state that it
+hasn't seen before then it will not generalize as well since many of its
+decisions are based on state information and it has no information for 
+California, for example.
+
+Oddly, the most important attribute seems to be the date of donation.  This
+is the root of the decision tree.  This might be connected to campaigning
+in the respective states.  For example, donations to the Democratic party
+may increase around the time the Democratic party campaigned in Ohio.  After
+that occupation seems to be the most important.  This makes some sense as
+many occupations are seen as being aligned with one party or another.  An oil
+company executive is probably a Republican.
+
+Naive Bayes shows much lower performance than J48.  This is not what I 
+expected.  However, it does much better with fewer data than J48.  The 
+performance of J48 on test data degrades with less and less training data.  
+This would suggest that Naive Bayes would generalize better as the training 
+sets we are given are clearly a very small sample of the general population.
+
+\section{Conclusion}
+The final model I used J48 with 5 features selected with the feature 
+selection algorithm used above.  I then trained this model on all the 
+training data.  This model is located in the file {\tt classifier.model}.  Hopefully
+this model will work well with unknown data.
+
+\end{document}
+

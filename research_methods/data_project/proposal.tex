@@ -1,0 +1,80 @@
+\documentclass{article}
+
+\usepackage{verbatim}
+
+\author{Thomas Torsney-Weir}
+\title{Is Video Poker Fair?}
+
+%page formatting
+\setlength{\parskip}{2.5ex plus 0.5ex minus 0.5ex}
+\setlength{\parindent}{0ex}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+Video poker works by having the player pay an initial fee.  The machine then
+randomly picks five cards out of a standard 52 card deck.  The player is then 
+offered the opportunity to exchange up to five cards for new ones from the
+remaining deck.  Finally, the hand is evaluated and you receive a payoff 
+--- which may be zero --- based on the quality of your hand.
+
+I intend to investigate whether the payoffs for various video poker hands 
+is fair.  In other words does the expected payoff for the various hands 
+make it profitable for the player to play.
+
+\section{Experiment}
+I will simplify the game by removing the ``draw'' step.  This is the step
+where the player is offered the chance to exchange some or all of their cards
+for new ones.  I will only evaluate the original five card hand.  There is a
+certain strategy in picking the best cards to exchange.  
+
+\begin{comment}
+longer explanation
+You need to assume some prior probability for each class of hands given your 
+current hand.  This needs to be combined with the probability of each card 
+in the remaining deck, etc.
+\end{comment}
+
+This will make the programming simpler and remove any assumptions of strategy
+from the hands generated in the experiment.
+
+I will randomly generate five distinct cards per trial.  Each of the cards 
+has an equal chance of occuring.  The hand will be evaluated to determine 
+what class it is in.  The class determines the payoff.
+Here are the classes listed in order from best to worst: royal flush, 
+straight flush, four of a kind, full house, flush, straight, three of a 
+kind, two pair, and one pair.  The payoff schedule for a one dollar fee in a
+typical game is as follows: 250, 50, 25, 9, 6, 4, 3, 2, 1 for royal flush to
+one pair respectively.  In the case where a hand can take multiple 
+classes you use the best hand.  The value of each hand will be equal to 
+the payoff.  I will also count the occurences of each class of hands.
+
+The number of distinct poker hands is 5 choose 2.  There's no reason to 
+generate any more than this number of hands.  However, these hands will 
+be generated with a uniform probability.  The payoffs for the game follow
+an exponential distribution.  I might need to generate more than the 5 choose
+2 hands before I get a royal flush.  
+
+\section{Analysis}
+The average payoff is an interesting measure.  This is the amount 
+you'd expect to receive when playing the game.  Hopefully this will be 
+greater than the bet amount otherwise is uneconomical to play.  
+
+The confidence interval is also a good measure as the payoff for 
+a straight flush is so much greater than for two pair.  The average may
+be skewed.  The confidence interval will tell you the range where your 
+expected return lies.  The issue is that the player doesn't have enough 
+money or time to play the game forever.  If the confidence interval is wide
+then the player may never get the expected return.
+
+The payoffs listed for the poker hands seem to follow an exponential 
+distribution.  I will compare the graphs of the payoff function with 
+a histogram of the hands I generated.  The shape of these graphs should
+be similar if the payoffs for the various hands are fair.
+
+%I will use the chi-square test to check whether the hypothesis that 
+
+\end{document}
+

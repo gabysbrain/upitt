@@ -1,0 +1,222 @@
+\documentclass{article}
+
+\usepackage{fullpage}
+
+\author{Thomas Torsney-Weir}
+\title{Bleu Evaluation}
+
+\begin{document}
+
+\maketitle
+
+\section{Human Scores}
+
+\subsection{Meaning}
+Table listing meaning scores for the sentences
+
+\begin{tabular}{|l|c|c|}
+\hline
+Sentence               & Me & Roxana \\
+\hline \hline
+E11-XIN20030110.0005-1 & 4 & 4 \\ \hline
+E11-XIN20030128.0160-1 & 5 & 4 \\ \hline
+E14-XIN20030108.0124-1 & 2 & 4 \\ \hline
+E14-XIN20030128.0160-1 & 4 & 3 \\ \hline
+E15-AFC20030107.0003-1 & 2 & 2 \\ \hline
+E15-XIN20030128.0160-1 & 5 & 4 \\ \hline
+E09-XIN20030110.0005-1 & 4 & 3 \\ \hline
+E11-AFC20030102.0038-1 & 4 & 4 \\ \hline
+E11-AFC20030110.0014-1 & 1 & 4 \\ \hline
+E11-XIN20030108.0124-1 & 2 & 3 \\ \hline
+E11-XIN20030110.0170-1 & 2 & 4 \\ \hline
+E14-XIN20030110.0005-1 & 3 & 5 \\ \hline
+E15-XIN20030121.0010-6 & 1 & 2 \\ \hline
+E12-AFC20030215.0016-10 & 4 & 2 \\ \hline
+E09-XIN20030121.0010-6 & 2 & 1 \\ \hline
+E11-AFC20030208.0077-1 & 1 & 1 \\ \hline
+E11-AFC20030218.0003-1 & 3 & 3 \\ \hline
+E11-XIN20030111.0054-9 & 2 & 1 \\ \hline
+E12-AFC20030102.0038-1 & 2 & 1 \\ \hline
+E12-XIN20030211.0146-4 & 3 & 2 \\ \hline
+E14-AFC20030228.0014-6 & 2 & 2 \\ \hline
+E14-XIN20030121.0010-1 & 4 & 2 \\ \hline
+E14-XIN20030211.0146-4 & 4 & 2 \\ \hline
+E15-XIN20030122.0195-1 & 2 & 2 \\ \hline
+E12-AFC20030228.0014-12 & 5 & 5 \\ \hline
+E09-AFC20030121.0005-1 & 3 & 1 \\ \hline
+E09-XIN20030215.0094-1 & 4 & 4 \\ \hline
+E11-XIN20030104.0061-1 & 3 & 1 \\ \hline
+E14-XIN20030204.0083-4 & 2 & 1 \\ \hline
+E15-AFC20030208.0047-1 & 2 & 1 \\ 
+\hline
+\end{tabular}
+
+\subsection{Fluency}
+
+\begin{tabular}{|l|c|c|}
+\hline
+Sentence               & Me & Roxana \\
+\hline \hline
+E11-XIN20030110.0005-1 & 3 & 3 \\ \hline
+E11-XIN20030128.0160-1 & 4 & 4 \\ \hline
+E14-XIN20030108.0124-1 & 4 & 5 \\ \hline
+E14-XIN20030128.0160-1 & 5 & 5 \\ \hline
+E15-AFC20030107.0003-1 & 2 & 2 \\ \hline
+E15-XIN20030128.0160-1 & 4 & 4 \\ \hline
+E09-XIN20030110.0005-1 & 4 & 4 \\ \hline
+E11-AFC20030102.0038-1 & 3 & 4 \\ \hline
+E11-AFC20030110.0014-1 & 1 & 5 \\ \hline
+E11-XIN20030108.0124-1 & 2 & 4 \\ \hline
+E11-XIN20030110.0170-1 & 3 & 4 \\ \hline
+E14-XIN20030110.0005-1 & 3 & 4 \\ \hline
+E15-XIN20030121.0010-6 & 2 & 1 \\ \hline
+E12-AFC20030215.0016-10 & 5 & 2 \\ \hline
+E09-XIN20030121.0010-6 & 3 & 1 \\ \hline
+E11-AFC20030208.0077-1 & 1 & 1 \\ \hline
+E11-AFC20030218.0003-1 & 4 & 2 \\ \hline
+E11-XIN20030111.0054-9 & 2 & 2 \\ \hline
+E12-AFC20030102.0038-1 & 1 & 2 \\ \hline
+E12-XIN20030211.0146-4 & 3 & 3 \\ \hline
+E14-AFC20030228.0014-6 & 3 & 3 \\ \hline
+E14-XIN20030121.0010-1 & 3 & 3 \\ \hline
+E14-XIN20030211.0146-4 & 3 & 4 \\ \hline
+E15-XIN20030122.0195-1 & 3 & 3 \\ \hline
+E12-AFC20030228.0014-12 & 4 & 5 \\ \hline
+E09-AFC20030121.0005-1 & 3 & 2 \\ \hline
+E09-XIN20030215.0094-1 & 3 & 4 \\ \hline
+E11-XIN20030104.0061-1 & 3 & 2 \\ \hline
+E14-XIN20030204.0083-4 & 3 & 4 \\ \hline
+E15-AFC20030208.0047-1 & 2 & 1 \\ 
+\hline
+\end{tabular}
+
+\section{Bleu Scores}
+
+\subsection{Raw Scores}
+The Bleu scores were computed for n-grams with n varying from 1 to N.  N 
+varied between 1 and 4.  The table below lists the scores.
+
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+Sentence               & $N=1$ & $N=2$ & $N=3$ & $N=4$ \\
+\hline \hline
+E11-XIN20030110.0005-1 & 0.564321149927 & 0.437121283116 & 0.343231522423 & 0.0 \\ \hline
+E11-XIN20030128.0160-1 & 0.833333333333 & 0.408248290464 & 0.0 & 0.0 \\ \hline
+E14-XIN20030108.0124-1 & 0.597109425478 & 0.506664148639 & 0.358265655287 & 0.0 \\ \hline
+E14-XIN20030128.0160-1 & 0.666666666667 & 0.36514837167 & 0.0 & 0.0 \\ \hline
+E15-AFC20030107.0003-1 & 0.5 & 0.0 & 0.0 & 0.0 \\ \hline
+E15-XIN20030128.0160-1 & 0.833333333333 & 0.408248290464 & 0.0 & 0.0 \\ \hline
+E09-XIN20030110.0005-1 & 0.714285714286 & 0.487950036474 & 0.0 & 0.0 \\ \hline
+E11-AFC20030102.0038-1 & 0.714285714286 & 0.690065559342 & 0.456671140396 & 0.0 \\ \hline
+E11-AFC20030110.0014-1 & 0.285714285714 & 0.218217890236 & 0.0 & 0.0 \\ \hline
+E11-XIN20030108.0124-1 & 0.247679399929 & 0.0 & 0.0 & 0.0 \\ \hline
+E11-XIN20030110.0170-1 & 0.285714285714 & 0.218217890236 & 0.0 & 0.0 \\ \hline
+E14-XIN20030110.0005-1 & 0.714285714286 & 0.487950036474 & 0.0 & 0.0 \\ \hline
+E15-XIN20030121.0010-6 & 0.285714285714 & 0.218217890236 & 0.0 & 0.0 \\ \hline
+E12-AFC20030215.0016-10 & 0.714285714286 & 0.597614304667 & 0.414913266683 & 0.0 \\ \hline
+E09-XIN20030121.0010-6 & 0.375 & 0.0 & 0.0 & 0.0 \\ \hline
+E11-AFC20030208.0077-1 & 0.171822319698 & 0.0 & 0.0 & 0.0 \\ \hline
+E11-AFC20030218.0003-1 & 0.625 & 0.298807152334 & 0.0 & 0.0 \\ \hline
+E11-XIN20030111.0054-9 & 0.330936338469 & 0.0 & 0.0 & 0.0 \\ \hline
+E12-AFC20030102.0038-1 & 0.375 & 0.327326835354 & 0.0 & 0.0 \\ \hline
+E12-XIN20030211.0146-4 & 0.778800783071 & 0.416286528972 & 0.0 & 0.0 \\ \hline
+E14-AFC20030228.0014-6 & 0.389400391536 & 0.0 & 0.0 & 0.0 \\ \hline
+E14-XIN20030121.0010-1 & 0.875 & 0.5 & 0.0 & 0.0 \\ \hline
+E14-XIN20030211.0146-4 & 0.48675048942 & 0.232711244225 & 0.0 & 0.0 \\ \hline
+E15-XIN20030122.0195-1 & 0.530714327249 & 0.303265329856 & 0.210272435576 & 0.0 \\ \hline
+E12-AFC20030228.0014-12 & 0.875 & 0.790569415042 & 0.746900791093 & 0.707106781187 \\ \hline
+E09-AFC20030121.0005-1 & 0.355883290185 & 0.266912467639 & 0.0 & 0.0 \\ \hline
+E09-XIN20030215.0094-1 & 0.596559544543 & 0.258317860222 & 0.0 & 0.0 \\ \hline
+E11-XIN20030104.0061-1 & 0.444854112732 & 0.211012833409 & 0.0 & 0.0 \\ \hline
+E14-XIN20030204.0083-4 & 0.596559544543 & 0.365316621329 & 0.257431662134 & 0.0 \\ \hline
+E15-AFC20030208.0047-1 & 0.666666666667 & 0.408248290464 & 0.0 & 0.0 \\
+\hline
+\end{tabular}
+
+\subsection{Bucketed Scores}
+The follow table contains Bleu scores that have been grouped into categories
+so $1=(0,0.2], 2=(0.2,0.4], 3=(0.4,0.6], 4=(0.6,0.8], 5=(0.8, 1)$.
+
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+Sentence               & $N=1$ & $N=2$ & $N=3$ & $N=4$ \\
+\hline \hline
+E11-XIN20030110.0005-1 & 3 & 3 & 2 & 1 \\ \hline
+E11-XIN20030128.0160-1 & 5 & 3 & 1 & 1 \\ \hline
+E14-XIN20030108.0124-1 & 3 & 3 & 2 & 1 \\ \hline
+E14-XIN20030128.0160-1 & 4 & 2 & 1 & 1 \\ \hline
+E15-AFC20030107.0003-1 & 3 & 1 & 1 & 1 \\ \hline
+E15-XIN20030128.0160-1 & 5 & 3 & 1 & 1 \\ \hline
+E09-XIN20030110.0005-1 & 4 & 3 & 1 & 1 \\ \hline
+E11-AFC20030102.0038-1 & 4 & 4 & 3 & 1 \\ \hline
+E11-AFC20030110.0014-1 & 2 & 2 & 1 & 1 \\ \hline
+E11-XIN20030108.0124-1 & 2 & 1 & 1 & 1 \\ \hline
+E11-XIN20030110.0170-1 & 2 & 2 & 1 & 1 \\ \hline
+E14-XIN20030110.0005-1 & 4 & 3 & 1 & 1 \\ \hline
+E15-XIN20030121.0010-6 & 2 & 2 & 1 & 1 \\ \hline
+E12-AFC20030215.0016-10 & 4 & 3 & 3 & 1 \\ \hline
+E09-XIN20030121.0010-6 & 2 & 1 & 1 & 1 \\ \hline
+E11-AFC20030208.0077-1 & 1 & 1 & 1 & 1 \\ \hline
+E11-AFC20030218.0003-1 & 4 & 2 & 1 & 1 \\ \hline
+E11-XIN20030111.0054-9 & 2 & 1 & 1 & 1 \\ \hline
+E12-AFC20030102.0038-1 & 2 & 2 & 1 & 1 \\ \hline
+E12-XIN20030211.0146-4 & 4 & 3 & 1 & 1 \\ \hline
+E14-AFC20030228.0014-6 & 2 & 1 & 1 & 1 \\ \hline
+E14-XIN20030121.0010-1 & 5 & 3 & 1 & 1 \\ \hline
+E14-XIN20030211.0146-4 & 3 & 2 & 1 & 1 \\ \hline
+E15-XIN20030122.0195-1 & 3 & 2 & 2 & 1 \\ \hline
+E12-AFC20030228.0014-12 & 5 & 4 & 4 & 4 \\ \hline
+E09-AFC20030121.0005-1 & 2 & 2 & 1 & 1 \\ \hline
+E09-XIN20030215.0094-1 & 3 & 2 & 1 & 1 \\ \hline
+E11-XIN20030104.0061-1 & 3 & 2 & 1 & 1 \\ \hline
+E14-XIN20030204.0083-4 & 3 & 2 & 2 & 1 \\ \hline
+E15-AFC20030208.0047-1 & 4 & 3 & 1 & 1 \\
+\hline
+\end{tabular}
+
+\section{Comparison}
+
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+Sentence               & Meaning & Fluency & $N=1$ & $N=2$ \\
+\hline \hline
+E11-XIN20030110.0005-1 & 4 & 3 & 3 & 3 \\ \hline
+E11-XIN20030128.0160-1 & 5 & 4 & 5 & 3 \\ \hline
+E14-XIN20030108.0124-1 & 2 & 4 & 3 & 3 \\ \hline
+E14-XIN20030128.0160-1 & 4 & 5 & 4 & 2 \\ \hline
+E15-AFC20030107.0003-1 & 2 & 2 & 3 & 1 \\ \hline
+E15-XIN20030128.0160-1 & 5 & 4 & 5 & 3 \\ \hline
+E09-XIN20030110.0005-1 & 4 & 4 & 4 & 3 \\ \hline
+E11-AFC20030102.0038-1 & 4 & 3 & 4 & 4 \\ \hline
+E11-AFC20030110.0014-1 & 1 & 1 & 2 & 2 \\ \hline
+E11-XIN20030108.0124-1 & 2 & 2 & 2 & 1 \\ \hline
+E11-XIN20030110.0170-1 & 2 & 3 & 2 & 2 \\ \hline
+E14-XIN20030110.0005-1 & 3 & 3 & 4 & 3 \\ \hline
+E15-XIN20030121.0010-6 & 1 & 2 & 2 & 2 \\ \hline
+E12-AFC20030215.0016-10 & 4 & 5 & 4 & 3 \\ \hline
+E09-XIN20030121.0010-6 & 2 & 3 & 2 & 1 \\ \hline
+E11-AFC20030208.0077-1 & 1 & 1 & 1 & 1 \\ \hline
+E11-AFC20030218.0003-1 & 3 & 4 & 4 & 2 \\ \hline
+E11-XIN20030111.0054-9 & 2 & 2 & 2 & 1 \\ \hline
+E12-AFC20030102.0038-1 & 2 & 1 & 2 & 2 \\ \hline
+E12-XIN20030211.0146-4 & 3 & 3 & 4 & 3 \\ \hline
+E14-AFC20030228.0014-6 & 2 & 3 & 2 & 1 \\ \hline
+E14-XIN20030121.0010-1 & 4 & 3 & 5 & 3 \\ \hline
+E14-XIN20030211.0146-4 & 4 & 3 & 3 & 2 \\ \hline
+E15-XIN20030122.0195-1 & 2 & 3 & 3 & 2 \\ \hline
+E12-AFC20030228.0014-12 & 5 & 4 & 5 & 4 \\ \hline
+E09-AFC20030121.0005-1 & 3 & 3 & 2 & 2 \\ \hline
+E09-XIN20030215.0094-1 & 4 & 3 & 3 & 2 \\ \hline
+E11-XIN20030104.0061-1 & 3 & 3 & 3 & 2 \\ \hline
+E14-XIN20030204.0083-4 & 2 & 3 & 3 & 2 \\ \hline
+E15-AFC20030208.0047-1 & 2 & 2 & 4 & 3 \\
+\hline
+\end{tabular}
+
+I removed the $N=3$ and $N=4$ Bleu scores since they were all very low.  There
+weren't any 3-gram or 4-gram matches.  In general the Bleu score was pretty
+good at measuring the fluency and meaning at least for the unigram comparisons. 
+There is a steep dropoff in score as you increase the size of the n-grams.
+Choosing the best N to use might be a difficult task.
+
+\end{document}

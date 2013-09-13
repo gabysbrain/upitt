@@ -1,0 +1,214 @@
+\documentclass[10pt]{article}
+
+\usepackage{verbatim}
+\usepackage{fullpage}
+
+%page formatting
+\begin{document}
+
+{\bf Homework 1} \hfill {\raggedleft Thomas Torsney-Weir}
+
+\section{Termination}
+Once the board size is greater than 3 by 3 it becomes intractable to solve
+a tic tac toe puzzle.  Adding alpha beta pruning helps a little but the core
+problem is the number of possible moves for a mostly empty board.  The only
+restriction on where the piece can be placed is that the square must be blank.
+The depth of the search tree is equal to the number of blank sqares.  The
+branching factor is just as bad.  
+
+The obvious solution would be to add a depth limit to the search.  However,
+with alpha beta pruning enabled the branching factor varies widely.  For some
+nodes only one child will be explored while for others the entire space will
+need to be explored.  So the depth doesn't tell us much about the size of the
+search space.
+
+The termination condition is a hard cutoff at a certain number of nodes 
+generated regardless of depth.  This caps the number of nodes we need
+to examine to make the search tractable.  It also solves the problem with the
+arbitrary number of nodes expanded due to alpha beta pruning.  This is 
+effectively a limit on memory used.
+
+\subsection{Code Example}
+The following code example shows the use of the global {\tt SerialNumber}
+class for keeping track of how many nodes we've generated.
+
+\begin{verbatim}
+#define MAXNODES 5000
+
+// Class to track how many nodes we've generated
+class SerialNumber
+{
+public:
+    SerialNumber(int maxNum) {
+        myMax = maxNum; 
+        myNum = 1;
+    }
+
+    bool atMax() {return myNum > myMax;}
+    void inc() {
+        myNum++;
+    }
+
+protected:
+    int myNum;
+    int myMax;
+};
+
+pair<Board*,double> minimax(Board *b, Piece player, 
+                            double alpha, double beta, SerialNumber *sn)
+{
+    ...
+
+    // See if we've evaluated enough boards
+    if(sn->atMax())
+        return pair<Board*,double>(b, eval(b));
+    
+    ...
+
+    // Each node we process will increment the serial number counter
+    // We want to stop processing when we reach the maximum count
+    for(size_t i=0; i<succs.size() && !sn->atMax(); i++, sn->inc()) {
+        pair<Board*,double> temp = minimax(succs[i], nextPlayer, alpha, beta, sn);
+        if(player == X && temp.second > alpha) {
+            alpha = temp.second;
+            bestBoard = succs[i];
+        } else if(player == O && temp.second < beta) {
+            beta = temp.second;
+            bestBoard = succs[i];
+        }
+
+        // Check for return condition
+        if(player == X && alpha >= beta)
+            return pair<Board*,double>(bestBoard,beta);
+        else if(player == O && beta <= alpha)
+            return pair<Board*,double>(bestBoard,alpha);
+    }
+
+    if(player == X)
+        return pair<Board*,double>(bestBoard,alpha);
+    else
+        return pair<Board*,double>(bestBoard,beta);
+}
+\end{verbatim}
+
+\section{Evaluation}
+Evaluating complete tic tac toe boards is easy.  A winning board gets a high
+positive score and a losing board gets a high negative score.  However, the
+cutoff may force us to evaluate an incomplete board.  Evaluating these 
+intermediate board positions is more difficult.  We cannot simply assign them
+a value of zero since some boards have a much better chance of winning than
+others.  
+
+The idea behind the evaluation function is that X should try to keep its 
+options to win open while minimizing O's options to win.  The evaluation 
+function returns the number of possible winning configurations minus the
+number of possible losing configurations.  A possible winning configuration
+is n in a row of either X's or blanks.  X could fill in those blanks to win.
+A possible losing configuration is n in a row of O's or blanks.
+
+\subsection{Code Example}
+The function that computes the number of possible winning configurations
+and the {\tt eval()} function are listed below.
+
+\begin{verbatim}
+class Board 
+{
+public:
+    
+    ...
+
+    // Returns the number of possible winnings 
+    // (n in a row consisting of the set of pieces)
+    int numPossibles(std::set<Piece> &pieces) {
+        int total = 0;
+        for(int x=0; x<xDim; x++) {
+            for(int y=0; y<yDim; y++) {
+                if(inSet(gameBoard[x][y],pieces)) {
+                    // Assume left and up combinations would 
+                    // have been found earlier
+                    // right
+                    if(x+numWin <= xDim) {
+                        bool win = true;
+                        for(int i=1; i<numWin; i++)
+                            win = win && inSet(gameBoard[x+i][y],pieces);
+                        if(win) total++;
+                    }
+                    // down
+                    if(y+numWin <= yDim) {
+                        bool win = true;
+                        for(int i=1; i<numWin; i++)
+                            win = win && inSet(gameBoard[x][y+i],pieces);
+                        if(win) total++;
+                    }
+                    // down right
+                    if(x+numWin <= xDim && y+numWin <= yDim) {
+                        bool win = true;
+                        for(int i=1; i<numWin; i++)
+                            win = win && inSet(gameBoard[x+i][y+i],pieces);
+                        if(win) total++;
+                    }
+                    // down left
+                    if(x-numWin+1 >= 0 && y+numWin <= yDim) {
+                        bool win = true;
+                        for(int i=1; i<numWin; i++)
+                            win = win && inSet(gameBoard[x-i][y+i],pieces);
+                        if(win) total++;
+                    }
+                }
+            }
+        }
+
+        return total;
+    }
+    
+    ...
+
+protected:
+    bool inSet(Piece p, std::set<Piece> &pieces) {
+        return pieces.find(p) != pieces.end();
+    }
+    Piece **gameBoard;
+    int xDim;
+    int yDim;
+    int numWin;
+};
+
+double eval(Board *b)
+{
+    Piece notMe;
+    if(ME == X) notMe = O;
+    else notMe = X;
+
+    double maxScore = b->xdim() * b->ydim();
+    double score = 0;
+    if(b->isWinning(ME))
+        score = maxScore;
+    else if(b->isWinning(notMe))
+        score = -maxScore;
+    else {
+        std::set<Piece> os;
+        std::set<Piece> xs;
+        os.insert(O);
+        os.insert(None);
+        xs.insert(X);
+        xs.insert(None);
+        int oMatches = b->numPossibles(os);
+        int xMatches = b->numPossibles(xs);
+        if(ME == X)
+            score = xMatches - oMatches;
+        else
+            score = oMatches - xMatches;
+    }
+
+    #ifdef DEBUG_EVAL
+    cout << "eval: board: " << endl;
+    printBoard(b);
+    cout << endl;
+    cout << "      score: " << score << endl;
+    #endif
+
+    return score;
+}
+\end{verbatim}
+
+\end{document}

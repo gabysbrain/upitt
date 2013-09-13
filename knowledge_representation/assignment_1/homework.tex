@@ -1,0 +1,176 @@
+\documentclass[10pt]{article}
+
+\nofiles
+
+\usepackage{fullpage}
+\usepackage[pdftex]{graphicx}
+\DeclareGraphicsExtensions{.pdf,.jpg}
+
+% no numbers, etc
+\pagestyle{empty}
+
+\begin{document}
+
+{\bf Assignment 1} \hfill {\raggedleft Thomas Torsney-Weir}
+
+%Each homework problem goes here
+\begin{enumerate}
+\item % english -> logic
+  Propositions
+  \begin{itemize}
+  \item ``It is below freezing'': $F$
+  \item ``It is snowing'': $S$
+  \item ``It rains in the afternoon'': $R$
+  \item ``We will go shopping'': $G$
+  \end{itemize}
+
+  Sentences
+  \begin{itemize}
+  \item ``If it is below freezing, it is also snowing'': $F \Leftarrow S$
+  \item ``It is either below freezing, or it is snowing, 
+          but it is not snowing if it is below freezing'': 
+        $(F \lor \neg S) \land (\neg S \Rightarrow F)$
+  \item ``If it rains in the afternoon we will go shopping'': $R \Rightarrow G$
+  \item ``We will go shopping only if it rains in the afternoon'':
+        $R \Rightarrow G$
+  \item ``We will go shopping if and only if it rains in the afternoon'':
+        $R \Leftrightarrow G$
+  \end{itemize}
+
+\item % equivalence
+  \begin{itemize}
+  \item Yes, by Demorgan's law 
+        $\neg (A \land B) \Leftrightarrow (\neg A \lor \neg B)$
+  \item Yes, since $(P \Rightarrow R) \Leftrightarrow (\neg P \lor R)$ and
+        $(\neg R \Rightarrow \neg P) \Leftrightarrow (R \lor \neg P)$.
+  \item No,\\
+    \begin{math}
+    \begin{array}{|c|c|c|c|}
+      \hline
+      P & R & P \Rightarrow R & \neg P \Rightarrow \neg R \\
+      \hline \hline
+      t & t & t & t \\
+      t & f & f & t \\
+      f & t & t & f \\
+      f & f & t & t \\
+      \hline
+    \end{array}
+    \end{math}
+  \item Yes,\\
+    \begin{math}
+    \begin{array}{|c|c|c|c|c|}
+      \hline
+      P & Q & R & (P \Rightarrow R) \land (Q \Rightarrow R) & (P \lor Q) \Rightarrow R \\
+      \hline \hline
+      t & t & t & t & t \\
+      t & t & f & f & f \\
+      t & f & t & t & t \\
+      t & f & f & f & f \\
+      f & t & t & t & t \\
+      f & t & f & f & f \\
+      f & f & t & t & t \\
+      f & f & f & f & f \\
+      \hline
+    \end{array}
+    \end{math}
+  \item No,\\
+    \begin{math}
+    \begin{array}{|c|c|c|c|c|}
+      \hline
+      P & Q & R & (P \Rightarrow R) \land (P \Rightarrow Q) & P \Rightarrow (Q \lor R) \\
+      \hline \hline
+      t & t & t & t & t \\
+      t & t & f & f & t \\
+      t & f & t & f & t \\
+      t & f & f & f & f \\
+      f & t & t & t & t \\
+      f & t & f & t & t \\
+      f & f & t & t & t \\
+      f & f & f & t & t \\
+      \hline
+    \end{array}
+    \end{math}
+  \end{itemize}
+
+\item % entailment
+  \begin{enumerate}
+  \item % truth table
+    \ \\
+    \begin{math}
+    \begin{array}{|c|c|c|c|c||c|c|c||c|}
+      \hline
+      P & Q & R & S & T
+        & \neg (R \land \neg P) \lor \neg (\neg S \land \neg T) 
+        & \neg (T \lor P)
+        & Q \Rightarrow (\neg T \Rightarrow (\neg S \land R))
+        & \neg Q \\
+      \hline \hline
+      t & t & t & t & t & t & f & t & f \\ \hline
+      t & t & t & t & f & t & f & f & f \\ \hline
+      t & t & t & f & t & t & f & t & f \\ \hline
+      t & t & t & f & f & t & f & t & f \\ \hline
+      t & t & f & t & t & t & f & t & f \\ \hline
+      t & t & f & t & f & t & f & f & f \\ \hline
+      t & t & f & f & t & t & f & t & f \\ \hline
+      t & t & f & f & f & t & f & f & f \\ \hline
+      t & f & t & t & t & t & f & t & t \\ \hline
+      t & f & t & t & f & t & f & t & t \\ \hline
+      t & f & t & f & t & t & f & t & t \\ \hline
+      t & f & t & f & f & t & f & t & t \\ \hline
+      t & f & f & t & t & t & f & t & t \\ \hline
+      t & f & f & t & f & t & f & t & t \\ \hline
+      t & f & f & f & t & t & f & t & t \\ \hline
+      t & f & f & f & f & t & f & t & t \\ \hline
+      f & t & t & t & t & t & f & t & f \\ \hline
+      f & t & t & t & f & t & t & f & f \\ \hline
+      f & t & t & f & t & t & f & t & f \\ \hline
+      f & t & t & f & f & f & t & t & f \\ \hline
+      f & t & f & t & t & t & f & t & f \\ \hline
+      f & t & f & t & f & t & t & f & f \\ \hline
+      f & t & f & f & t & t & f & t & f \\ \hline
+      f & t & f & f & f & t & t & f & f \\ \hline
+      f & f & t & t & t & t & f & t & t \\ \hline
+      f & f & t & t & f & t & t & t & t \\ \hline % line
+      f & f & t & f & t & t & f & t & t \\ \hline
+      f & f & t & f & f & f & t & t & t \\ \hline
+      f & f & f & t & t & t & f & t & t \\ \hline
+      f & f & f & t & f & t & t & t & t \\ \hline % line
+      f & f & f & f & t & t & f & t & t \\ \hline
+      f & f & f & f & f & t & t & t & t \\ \hline % line
+    \end{array}
+    \end{math}
+  \item % inference rules
+    \begin{enumerate}
+    \item $\neg (R \land \neg P) \lor \neg (\neg S \land \neg T)$
+    \item $\neg (T \lor P)$
+    \item $Q \Rightarrow (\neg T \Rightarrow (\neg S \land R))$
+    \item $\neg Q$
+    \item $\neg T \land \neg P$: Demorgan's of ii
+    \item $\neg T$: And elimination of v
+    \item $\neg R \lor P \lor S \lor T$: Demorgan's of i
+    \item $\neg R \lor P \lor S$: Resolution of vi and vii
+    \item $\neg P$: And elimination of v
+    \item $\neg R \lor S$: Resolution of vii and ix
+    \item $\neg T \land \neg (\neg S \land R) \Rightarrow \neg Q$: Contrapositive of iii
+    \item $\neg (R \land \neg S)$: Demorgan's of x
+    \item $\neg T \land \neg (R \land \neg S)$: And introduction of xii and vi
+    \item $neg Q$ modus ponens with xi and xiii 
+    \end{enumerate}
+  \item % resolution
+    CNF: \\
+    \begin{itemize}
+    \item $\neg R \lor P \lor S \lor T$
+    \item $\neg T \land \neg P$
+    \item $(\neg Q \lor T \lor \neg S) \land (\neg Q \lor T \lor R)$
+    \item $\neg Q$
+    \end{itemize}
+    
+    Proof: \\
+    \includegraphics[width=5in]{3c_proof.pdf}
+
+  \end{enumerate}
+
+\end{enumerate}
+
+\end{document}
+

@@ -1,0 +1,152 @@
+\documentclass[10pt]{article}
+
+\nofiles
+
+\usepackage{fullpage}
+\usepackage[pdftex]{graphicx}
+\DeclareGraphicsExtensions{.pdf,.jpg}
+
+% no numbers, etc
+\pagestyle{empty}
+
+\begin{document}
+
+{\bf Problem Set 2} \hfill {\raggedleft Thomas Torsney-Weir}
+
+%Each homework problem goes here
+\begin{enumerate}
+\item % non-halting function
+  \begin{verbatim}
+INPUT(R_1)
+N_1 <- 0
+UNTIL Y_1 TRUE DO
+  X_1 <- P(N_1)
+  FOR X_1 TIMES DO
+    Y_1 <- Y_1 + 1
+  ENDFOR
+ENDUNTIL
+OUTPUT(Y_1)
+  \end{verbatim}
+
+\item 
+  I have no idea what the inverse of a permutation is
+
+\item % function f(x) = k is primitive recursive
+  Base case: Let $k=0$. Then $f(x) = 0$ which is one of the base primitive 
+  recursive functions.
+
+  Hypothesis: $f(x) = k$ is primitive recursive.  This is equivalent 
+              to $f(k, x) = k$.
+
+  Proof:  We can build $f(k+1,x) = k+1$ by using the sucessor function.
+  \begin{eqnarray*}
+    f(k+1, x) & = & k + 1 \\
+    f(k+1, x) & = & f(k, x) + 1 \\
+    f(k+1, x) & = & S(P_2^3(k, f(k, x), x)) 
+  \end{eqnarray*}
+
+\item % f(x) = h(x) + g(x)
+  From the notes $add(y, x)$ is primitive recursive so
+  \begin{eqnarray*}
+    h(x) & = & f(x) + g(x) \\
+         & = & add(P_1^2(f(x), g(x)), P_2^2(f(x), g(x)))
+  \end{eqnarray*}
+
+\item % nth iteration
+  Base case: $\iota(0, x) = x$.  This is primitive recursive by assumption.
+  
+  Hypothesis: $\iota(n, f) = f^n(x)$ is primitive recursive.
+
+  Proof: 
+  \begin{eqnarray*}
+    \iota(n+1, f) & = & f(\iota(n, f)) \\
+    \iota(n+1, f) & = & f(P_2^3(n, \iota(n, f), f))
+  \end{eqnarray*}
+
+\item % exam question
+  Assume that $f(n, x)$ is primitive recursive.  Let $h(n, x) = f(n, f(n, x))$.
+  This function is primitive recursive since
+  \begin{eqnarray*}
+    h(n, x) & = & f(n, f(n, x)) \\
+    h(n, x) & = & f(P_1^2(n, f(n, x)), P_2^2(n, f(n, x)))
+  \end{eqnarray*}
+  and
+  \begin{eqnarray*}
+    f(n+1, x) & = & f(n, f(n, x)) \\
+    f(n+1, x) & = & h(n, x) \\
+    f(n+1, x) & = & P_2^3(n, h(n, x), x)
+  \end{eqnarray*}
+
+\item % perfect square
+  Let 
+  \begin{math}
+    P(m, x) = \left\{ \begin{array}{ll}
+      1 & if m * m = x \\
+      0 & otherwise
+        \end{array} \right.
+  \end{math} be a predicate. Also let $y(x) = \min m \le x[P(m, x)]$ be a
+  bounded minimization problem.  So, $f(x) = add(y(x), y(x))$.
+
+\item % gcd
+  ???
+
+\item % lcm
+  Let $div(x, y) = \frac{x}{y}$ be the integer division function.  This is
+  primitive recursive because it can be defined as a bounded minimization
+  problem.  Also let $mult(x, y) = x * y$ be the multiplication function.
+  \begin{eqnarray*}
+    lcm(x, y) & = & \frac{xy}{gcd(x, y)} \\
+    lcm(x, y) & = & div(mult(x, y), gcd(x, y)) 
+  \end{eqnarray*}
+  
+  Since $gcd(x, y)$ is primitive recursive, $lcm(x, y)$ is primitive recursive.
+
+\item % Theorem 4.5 part 2
+  Induction hypothesis: 
+    \begin{eqnarray*}
+      g(\vec{x}_2^n)         & = & \nu(f_P(\kappa(x_2,\ldots,\kappa(x_n)))) \\
+      h(y+1, z, \vec{x_2^n}) & = & \nu(f_Q(\kappa(y), \kappa(z), 
+                                           \kappa(x_2),\ldots,\kappa(x_n)))) \\
+    \end{eqnarray*}
+  So,
+    \begin{eqnarray*}
+      \nu(Z_1) & = & \nu(f_Q(\kappa(y), \kappa(z), 
+                             \kappa(x_2,\ldots,\kappa(x_n)))) \\
+               & = & \nu(f_Q(\kappa(y), f_Q(\kappa(y), f_Q(\kappa(y-1), 
+                                               \ldots, 
+                                               \kappa(x_2),\ldots,\kappa(x_n)), 
+                             \kappa(x_2),\ldots,\kappa(x_n))))) \\
+               & = & \nu(f_Q(\kappa\circ y, h(y, z, \vec{x_2^n}), 
+                                         x_2,\ldots,x_n)) \\
+               & = & \nu \circ \kappa \circ h(y+1, h(y, z, \vec{x_2^n}), 
+                                              \vec{x_2^n}) \\
+               & = & h(y+1, h(y, z, \vec{x_2^n}), \vec{x_2^n})
+    \end{eqnarray*}
+
+\item % exercise 4.1
+  \begin{enumerate}
+    \item 
+      Let $h(y) = m \le y[P(m, \vec{z}^n)]$.  So
+      $f_1(x) = \min y \le g(x)[P(y, \vec{z}^n)] = h(g(x))$.
+    \item ???
+    \item ???
+    \item
+      $\chi(f_1(x))$
+  \end{enumerate}
+
+\item % exercise 4.2
+  \begin{enumerate}
+    \item $f_1(x, y) = not(x - y)$.
+    \item $f_2(x, y) = f_1(x, y) - f_2(y, x)$
+    \item $f_3(x, y) = not(f_2(x, y))$
+    \item 
+      \begin{eqnarray*}
+        f_4(0, x)     & = & 1 \\
+        f_4(y + 1, x) & = & P_2^3(f_4(y, f_4(y, x), x)) \\
+      \end{eqnarray*}
+  \end{enumerate}
+
+\end{enumerate}
+
+\end{document}
+
